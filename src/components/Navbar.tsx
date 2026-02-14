@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Search, Heart, User, Menu, X, LogIn } from "lucide-react";
+import { Home, Search, Heart, Menu, X, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -19,9 +19,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent">
-            <Home className="h-5 w-5 text-accent-foreground" />
-          </div>
+          <img src="/propsmart-logo.svg" alt="PropSmart" className="h-9 w-9" />
           PropSmart
         </Link>
 
