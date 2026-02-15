@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import { MapPin, Bed, Bath, Maximize, Heart } from "lucide-react";
+import { MapPin, Bed, Bath, Maximize, Heart, Scale } from "lucide-react";
 import { Property, formatPrice } from "@/data/properties";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PropertyScore from "./PropertyScore";
+import { calculatePropertyScore } from "@/services/propertyScoring";
+import {
+  trackPropertyClick,
+  isPropertySaved,
+  saveProperty,
+  unsaveProperty,
+} from "@/integrations/supabase/behavior";
+import { useComparison } from "@/contexts/ComparisonContext";
 
 interface PropertyCardProps {
   property: Property;
@@ -11,10 +20,60 @@ interface PropertyCardProps {
 
 const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
   const [saved, setSaved] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { addToComparison, removeFromComparison, isInComparison, canAddMore } =
+    useComparison();
+
+  // Calculate property score
+  const score = calculatePropertyScore(property);
+  const inComparison = isInComparison(property.id);
+
+  // Check if property is saved on mount
+  useEffect(() => {
+    isPropertySaved(property.id).then(setSaved);
+  }, [property.id]);
+
+  const handleSaveClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (loading) return;
+
+    try {
+      setLoading(true);
+      if (saved) {
+        await unsaveProperty(property.id);
+        setSaved(false);
+      } else {
+        await saveProperty(property.id);
+        setSaved(true);
+      }
+    } catch (error) {
+      console.error("Error toggling save:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCompareClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (inComparison) {
+      removeFromComparison(property.id);
+    } else if (canAddMore) {
+      addToComparison(property);
+    }
+  };
+
+  const handleClick = () => {
+    trackPropertyClick(property.id);
+  };
 
   return (
     <Link
       to={`/property/${property.id}`}
+      onClick={handleClick}
       className="group block overflow-hidden rounded-xl bg-card shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
     >
       {/* Image */}
@@ -43,17 +102,22 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
           </span>
         </div>
 
+        {/* Property Score */}
+        <div className="absolute right-3 top-3">
+          <PropertyScore score={score.total} size="sm" />
+        </div>
+
         {/* Save button */}
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            setSaved(!saved);
-          }}
-          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm transition-colors hover:bg-card"
+          onClick={handleSaveClick}
+          disabled={loading}
+          className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-card/90 backdrop-blur-sm transition-all hover:bg-card hover:scale-110 disabled:opacity-50"
         >
           <Heart
-            className={`h-4 w-4 transition-colors ${
-              saved ? "fill-accent text-accent" : "text-muted-foreground"
+            className={`h-5 w-5 transition-all ${
+              saved
+                ? "fill-accent text-accent scale-110"
+                : "text-muted-foreground"
             }`}
           />
         </button>
@@ -88,13 +152,35 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
           </span>
         </div>
 
+        {/* Compare Button */}
+        <div className="mt-3 flex items-center justify-end">
+          <button
+            onClick={handleCompareClick}
+            disabled={!canAddMore && !inComparison}
+            className={`flex items-center gap-1 text-xs font-medium transition-colors ${
+              inComparison
+                ? "text-accent"
+                : canAddMore
+                  ? "text-muted-foreground hover:text-accent"
+                  : "text-muted-foreground opacity-50 cursor-not-allowed"
+            }`}
+          >
+            <Scale className="h-3.5 w-3.5" />
+            <span>{inComparison ? "In Comparison" : "Compare"}</span>
+          </button>
+        </div>
+
         {/* Recommendation reasons */}
         {reasons && reasons.length > 0 && (
           <div className="mt-3 border-t border-border pt-3">
             <p className="text-xs font-medium text-accent">Why recommended:</p>
             <div className="mt-1 flex flex-wrap gap-1">
               {reasons.slice(0, 2).map((reason, i) => (
-                <Badge key={i} variant="secondary" className="text-xs font-normal">
+                <Badge
+                  key={i}
+                  variant="secondary"
+                  className="text-xs font-normal"
+                >
                   {reason}
                 </Badge>
               ))}
