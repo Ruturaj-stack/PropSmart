@@ -88,6 +88,7 @@ export const getRecommendations = (
 ): ScoredProperty[] => {
   return properties
     .filter((p) => p.status === "Available")
+    .filter((p) => p.price >= preferences.minBudget && p.price <= preferences.maxBudget)
     .map((p) => scoreProperty(p, preferences))
     .filter((sp) => sp.score > 0)
     .sort((a, b) => b.score - a.score)
