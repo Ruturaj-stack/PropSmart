@@ -20,7 +20,7 @@ const Register = () => {
       toast({ title: "Error", description: "Password must be at least 8 characters", variant: "destructive" });
       return;
     }
-    toast({ title: "Registration", description: "Backend integration coming soon." });
+    toast({ title: "Registration", description: "Backend integration coming soon with Lovable Cloud." });
   };
 
   return (
