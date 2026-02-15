@@ -24,7 +24,7 @@ import { ThemeProvider } from "next-themes";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <ThemeProvider>
+  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
