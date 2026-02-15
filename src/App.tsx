@@ -32,6 +32,7 @@ const App = () => (
         <AuthProvider>
           <ComparisonProvider>
             <BrowserRouter>
+              <ScrollProgress />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/properties" element={<Properties />} />
@@ -41,6 +42,9 @@ const App = () => (
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
+              <ComparisonBar />
+              <ChatbotWidget />
+              <BackToTop />
             </BrowserRouter>
           </ComparisonProvider>
         </AuthProvider>
