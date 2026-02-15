@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const signUp = async (email: string, password: string, fullName: string) => {
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -47,6 +47,22 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       },
     });
     if (error) throw error;
+
+    if (data.user) {
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .insert({
+          id: data.user.id,
+          full_name: fullName,
+        })
+        .select()
+        .single();
+
+      if (profileError) {
+        console.warn("Error creating profile:", profileError);
+        // Don't throw here, as auth was successful.
+      }
+    }
     toast({
       title: "Check your email",
       description: "We sent you a confirmation link. Please verify your email to continue.",

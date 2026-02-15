@@ -15,7 +15,7 @@ export async function createReview(
   comment: string
 ): Promise<PropertyReview> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) throw new Error('User not authenticated');
 
   const { data, error } = await supabase
@@ -73,6 +73,8 @@ export async function getPropertyRating(propertyId: string): Promise<{ avg: numb
  * Mark review as helpful
  */
 export async function markReviewHelpful(reviewId: string, isHelpful: boolean): Promise<void> {
+  console.warn('Review helpfulness feature is temporary disabled due to missing table');
+  /*
   const { data: { user } } = await supabase.auth.getUser();
   
   if (!user) throw new Error('User not authenticated');
@@ -86,6 +88,7 @@ export async function markReviewHelpful(reviewId: string, isHelpful: boolean): P
     });
 
   if (error) throw error;
+  */
 }
 
 /**
@@ -93,7 +96,7 @@ export async function markReviewHelpful(reviewId: string, isHelpful: boolean): P
  */
 export async function getOrCreateConversation(): Promise<ChatConversation> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) throw new Error('User not authenticated');
 
   // Try to get existing conversation

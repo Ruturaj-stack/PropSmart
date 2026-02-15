@@ -22,7 +22,7 @@ export async function createAlert(
   criteria: AlertCriteria
 ): Promise<UserAlert | null> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) throw new Error('User not authenticated');
 
   const { data, error } = await supabase
@@ -48,7 +48,7 @@ export async function createAlert(
  */
 export async function getUserAlerts(): Promise<UserAlert[]> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) return [];
 
   const { data, error } = await supabase
@@ -100,7 +100,7 @@ export async function deleteAlert(alertId: string): Promise<void> {
  */
 export async function getNotifications(limit: number = 50): Promise<Notification[]> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) return [];
 
   const { data, error } = await supabase
@@ -123,7 +123,7 @@ export async function getNotifications(limit: number = 50): Promise<Notification
  */
 export async function getUnreadCount(): Promise<number> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) return 0;
 
   const { count, error } = await supabase
@@ -160,7 +160,7 @@ export async function markAsRead(notificationId: string): Promise<void> {
  */
 export async function markAllAsRead(): Promise<void> {
   const { data: { user } } = await supabase.auth.getUser();
-  
+
   if (!user) throw new Error('User not authenticated');
 
   const { error } = await supabase
@@ -178,32 +178,30 @@ export async function markAllAsRead(): Promise<void> {
 /**
  * Subscribe to real-time notifications
  */
-export function subscribeToNotifications(
+export async function subscribeToNotifications(
   callback: (notification: Notification) => void
-) {
-  const { data: { user } } = supabase.auth.getUser();
+): Promise<() => void> {
+  const { data: { user } } = await supabase.auth.getUser();
 
-  user.then((result) => {
-    if (!result.user) return;
+  if (!user) return () => { };
 
-    const channel = supabase
-      .channel('notifications')
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'notifications',
-          filter: `user_id=eq.${result.user.id}`,
-        },
-        (payload) => {
-          callback(payload.new as Notification);
-        }
-      )
-      .subscribe();
+  const channel = supabase
+    .channel('notifications')
+    .on(
+      'postgres_changes',
+      {
+        event: 'INSERT',
+        schema: 'public',
+        table: 'notifications',
+        filter: `user_id=eq.${user.id}`,
+      },
+      (payload) => {
+        callback(payload.new as Notification);
+      }
+    )
+    .subscribe();
 
-    return () => {
-      channel.unsubscribe();
-    };
-  });
+  return () => {
+    supabase.removeChannel(channel);
+  };
 }

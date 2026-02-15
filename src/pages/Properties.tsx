@@ -17,7 +17,7 @@ const Properties = () => {
   }));
 
   const filtered = useMemo(() => {
-    let result = mockProperties.filter((p) => {
+    const result = mockProperties.filter((p) => {
       if (filters.location && p.location !== filters.location) return false;
       if (filters.propertyType && p.propertyType !== filters.propertyType) return false;
       if (filters.listingType && p.listingType !== filters.listingType) return false;

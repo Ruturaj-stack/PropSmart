@@ -4,21 +4,25 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PropertyComparison from "@/components/PropertyComparison";
 import ComparisonRadarChart from "@/components/ComparisonRadarChart";
-import { mockProperties } from "@/data/properties";
+import { mockProperties, Property } from "@/data/properties";
 import { AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Compare = () => {
-  const { comparedProperties, removeProperty } = useComparison();
-  const [properties, setProperties] = useState<any[]>([]);
+  const { selectedProperties, removeFromComparison } = useComparison();
+  // const [properties, setProperties] = useState<Property[]>([]); // Derived state is redundant if selectedProperties is already Property[]
 
-  useEffect(() => {
-    const props = comparedProperties
-      .map((id) => mockProperties.find((p) => p.id === id))
-      .filter(Boolean);
-    setProperties(props);
-  }, [comparedProperties]);
+  // If selectedProperties is already Property[], we don't need to map IDs to mockProperties.
+  // The context seems to store full Property objects.
+  const properties = selectedProperties;
+
+  // useEffect(() => {
+  //   const props = comparedProperties
+  //     .map((id) => mockProperties.find((p) => p.id === id))
+  //     .filter(Boolean);
+  //   setProperties(props);
+  // }, [comparedProperties]);
 
   if (properties.length === 0) {
     return (
