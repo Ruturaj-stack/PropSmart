@@ -123,6 +123,7 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 text-accent">
                 <Sparkles className="h-5 w-5" />
+                <span className="text-sm font-semibold uppercase tracking-wider">AI-Powered</span>
               </div>
               <h2 className="mt-2 font-display text-3xl font-bold text-foreground">
                 Recommended For You

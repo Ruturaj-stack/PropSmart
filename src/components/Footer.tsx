@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Home, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => (
   <footer className="border-t border-border bg-primary text-primary-foreground">
@@ -7,7 +7,9 @@ const Footer = () => (
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold">
-            <img src="/propsmart-logo.svg" alt="PropSmart" className="h-8 w-8" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent">
+              <Home className="h-4 w-4 text-accent-foreground" />
+            </div>
             PropSmart
           </Link>
           <p className="mt-3 text-sm text-primary-foreground/60">

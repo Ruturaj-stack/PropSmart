@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Home, Search, Heart, Menu, X, LogIn, Sun, Moon } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Home, Search, Heart, Menu, X, LogIn, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/hooks/use-theme";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const { theme, toggleTheme } = useTheme();
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   const links = [
     { to: "/", label: "Home", icon: Home },
@@ -17,11 +20,19 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleSignOut = async () => {
+    await signOut();
+    toast({ title: "Signed out", description: "You've been signed out successfully." });
+    navigate("/");
+  };
+
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
-          <img src="/propsmart-logo.svg" alt="PropSmart" className="h-9 w-9" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent">
+            <Home className="h-5 w-5 text-accent-foreground" />
+          </div>
           PropSmart
         </Link>
 
@@ -44,28 +55,32 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <button
-            onClick={toggleTheme}
-            className="rounded-lg p-2 text-muted-foreground hover:bg-secondary transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {theme === "light" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
-          </button>
-          <Link to="/login">
-            <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
-              <LogIn className="h-4 w-4" />
-              Login
-            </Button>
-          </Link>
-          <Link to="/register">
-            <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              Sign Up
-            </Button>
-          </Link>
+          {user ? (
+            <>
+              <span className="text-sm text-muted-foreground">
+                <User className="mr-1 inline h-4 w-4" />
+                {user.user_metadata?.full_name || user.email}
+              </span>
+              <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground" onClick={handleSignOut}>
+                <LogOut className="h-4 w-4" />
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
+                  <LogIn className="h-4 w-4" />
+                  Login
+                </Button>
+              </Link>
+              <Link to="/register">
+                <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  Sign Up
+                </Button>
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -93,31 +108,21 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <div className="mt-3 border-t border-border pt-3">
-            <button
-              onClick={toggleTheme}
-              className="mb-3 flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-secondary"
-            >
-              {theme === "light" ? (
-                <>
-                  <Moon className="h-4 w-4" />
-                  Dark Mode
-                </>
-              ) : (
-                <>
-                  <Sun className="h-4 w-4" />
-                  Light Mode
-                </>
-              )}
-            </button>
-            <div className="flex gap-2">
-              <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
-                <Button variant="outline" className="w-full" size="sm">Login</Button>
-              </Link>
-              <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full bg-accent text-accent-foreground" size="sm">Sign Up</Button>
-              </Link>
-            </div>
+          <div className="mt-3 flex gap-2 border-t border-border pt-3">
+            {user ? (
+              <Button variant="outline" className="w-full" size="sm" onClick={() => { handleSignOut(); setMobileOpen(false); }}>
+                <LogOut className="mr-2 h-4 w-4" /> Sign Out
+              </Button>
+            ) : (
+              <>
+                <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
+                  <Button variant="outline" className="w-full" size="sm">Login</Button>
+                </Link>
+                <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
+                  <Button className="w-full bg-accent text-accent-foreground" size="sm">Sign Up</Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       )}
