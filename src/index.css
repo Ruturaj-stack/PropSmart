@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
 
 @layer base {
   :root {
@@ -53,14 +53,22 @@
     --badge-buy-foreground: 0 0% 100%;
     --badge-sold: 0 60% 50%;
     --badge-sold-foreground: 0 0% 100%;
-    --gradient-warm: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(25 95% 53%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(220 50% 8% / 0.7) 0%, hsl(220 50% 8% / 0.4) 100%);
+    --gradient-warm: linear-gradient(
+      135deg,
+      hsl(38 92% 50%) 0%,
+      hsl(25 95% 53%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(220 50% 8% / 0.7) 0%,
+      hsl(220 50% 8% / 0.4) 100%
+    );
     --shadow-card: 0 4px 24px -4px hsl(220 30% 12% / 0.08);
     --shadow-card-hover: 0 12px 40px -8px hsl(220 30% 12% / 0.15);
     --shadow-elevated: 0 20px 60px -12px hsl(220 30% 12% / 0.2);
 
-    --font-display: 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Inter", sans-serif;
   }
 
   .dark {
@@ -118,8 +126,28 @@
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
+  }
+
+  /* Fix select and option styling for dark mode */
+  select {
+    color-scheme: light dark;
+  }
+
+  .dark select {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+  }
+
+  .dark select option {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -168,8 +196,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
