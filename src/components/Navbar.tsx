@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Search, Heart, Menu, X, LogIn } from "lucide-react";
+import { Home, Search, Heart, Menu, X, LogIn, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/use-theme";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const links = [
     { to: "/", label: "Home", icon: Home },
@@ -42,6 +44,17 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <button
+            onClick={toggleTheme}
+            className="rounded-lg p-2 text-muted-foreground hover:bg-secondary transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {theme === "light" ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
+          </button>
           <Link to="/login">
             <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
               <LogIn className="h-4 w-4" />
@@ -80,13 +93,31 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <div className="mt-3 flex gap-2 border-t border-border pt-3">
-            <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" className="w-full" size="sm">Login</Button>
-            </Link>
-            <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
-              <Button className="w-full bg-accent text-accent-foreground" size="sm">Sign Up</Button>
-            </Link>
+          <div className="mt-3 border-t border-border pt-3">
+            <button
+              onClick={toggleTheme}
+              className="mb-3 flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-secondary"
+            >
+              {theme === "light" ? (
+                <>
+                  <Moon className="h-4 w-4" />
+                  Dark Mode
+                </>
+              ) : (
+                <>
+                  <Sun className="h-4 w-4" />
+                  Light Mode
+                </>
+              )}
+            </button>
+            <div className="flex gap-2">
+              <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
+                <Button variant="outline" className="w-full" size="sm">Login</Button>
+              </Link>
+              <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
+                <Button className="w-full bg-accent text-accent-foreground" size="sm">Sign Up</Button>
+              </Link>
+            </div>
           </div>
         </div>
       )}
