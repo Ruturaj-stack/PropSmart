@@ -1,20 +1,32 @@
 import { useSavedProperties } from "@/hooks/useSavedProperties";
 import PropertyCard from "./PropertyCard";
-import { mockProperties } from "@/data/properties";
+import { Property } from "@/data/properties";
+import { fetchProperties } from "@/services/propertyService";
 import { Loader2, Heart } from "lucide-react";
+import { useEffect, useState } from "react";
 
 /**
  * Saved Properties / Favorites Component
  */
 const SavedProperties = () => {
-  const { savedProperties, loading, error } = useSavedProperties();
+  const { savedProperties, loading: savedLoading, error: savedError } = useSavedProperties();
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Match saved property IDs with full property data
-  const properties = savedProperties
-    .map((saved) => mockProperties.find((p) => p.id === saved.property_id))
-    .filter((p): p is NonNullable<typeof p> => p !== undefined);
+  useEffect(() => {
+    const loadProperties = async () => {
+      if (savedLoading) return;
+      setLoading(true);
+      const allProperties = await fetchProperties();
+      const savedIds = savedProperties.map(s => s.property_id);
+      const filtered = allProperties.filter(p => savedIds.includes(p.id));
+      setProperties(filtered);
+      setLoading(false);
+    };
+    loadProperties();
+  }, [savedProperties, savedLoading]);
 
-  if (loading) {
+  if (loading || savedLoading) {
     return (
       <div className="flex items-center justify-center py-12">
         <Loader2 className="h-8 w-8 animate-spin text-accent" />
@@ -22,7 +34,7 @@ const SavedProperties = () => {
     );
   }
 
-  if (error) {
+  if (savedError) {
     return (
       <div className="rounded-lg border border-destructive bg-destructive/10 p-4 text-center">
         <p className="text-sm text-destructive">

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { 
-  getSavedProperties, 
-  saveProperty, 
+import {
+  getSavedProperties,
+  saveProperty,
   unsaveProperty,
-  isPropertySaved 
+  isPropertySaved
 } from '@/integrations/supabase/behavior';
 import type { SavedProperty } from '@/integrations/supabase/behavior';
 
@@ -41,7 +41,7 @@ export function useSavedProperties(): UseSavedPropertiesReturn {
   const toggleSave = async (propertyId: string) => {
     try {
       const saved = await isPropertySaved(propertyId);
-      
+
       if (saved) {
         await unsaveProperty(propertyId);
         setSavedProperties(prev => prev.filter(p => p.property_id !== propertyId));

@@ -2,16 +2,12 @@ import { Link } from "react-router-dom";
 import { MapPin, Bed, Bath, Maximize, Heart, Scale } from "lucide-react";
 import { Property, formatPrice } from "@/data/properties";
 import { Badge } from "@/components/ui/badge";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PropertyScore from "./PropertyScore";
 import { calculatePropertyScore } from "@/services/propertyScoring";
-import {
-  trackPropertyClick,
-  isPropertySaved,
-  saveProperty,
-  unsaveProperty,
-} from "@/integrations/supabase/behavior";
 import { useComparison } from "@/contexts/ComparisonContext";
+import { useSavedProperties } from "@/hooks/useSavedProperties";
+import { trackPropertyClick } from "@/integrations/supabase/behavior";
 
 interface PropertyCardProps {
   property: Property;
@@ -19,39 +15,26 @@ interface PropertyCardProps {
 }
 
 const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
-  const [saved, setSaved] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { isSaved, toggleSave, loading: saveLoading } = useSavedProperties();
   const { addToComparison, removeFromComparison, isInComparison, canAddMore } =
     useComparison();
+
+  const saved = isSaved(property.id);
 
   // Calculate property score
   const score = calculatePropertyScore(property);
   const inComparison = isInComparison(property.id);
 
-  // Check if property is saved on mount
-  useEffect(() => {
-    isPropertySaved(property.id).then(setSaved);
-  }, [property.id]);
-
   const handleSaveClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
-    if (loading) return;
+    if (saveLoading) return;
 
     try {
-      setLoading(true);
-      if (saved) {
-        await unsaveProperty(property.id);
-        setSaved(false);
-      } else {
-        await saveProperty(property.id);
-        setSaved(true);
-      }
+      await toggleSave(property.id);
     } catch (error) {
       console.error("Error toggling save:", error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -89,11 +72,10 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
         {/* Badges */}
         <div className="absolute left-3 top-3 flex gap-2">
           <span
-            className={`rounded-md px-2.5 py-1 text-xs font-semibold ${
-              property.listingType === "Rent"
+            className={`rounded-md px-2.5 py-1 text-xs font-semibold ${property.listingType === "Rent"
                 ? "bg-badge-rent text-badge-rent-foreground"
                 : "bg-badge-buy text-badge-buy-foreground"
-            }`}
+              }`}
           >
             {property.listingType}
           </span>
@@ -110,15 +92,14 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
         {/* Save button */}
         <button
           onClick={handleSaveClick}
-          disabled={loading}
+          disabled={saveLoading}
           className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-card/90 backdrop-blur-sm transition-all hover:bg-card hover:scale-110 disabled:opacity-50"
         >
           <Heart
-            className={`h-5 w-5 transition-all ${
-              saved
+            className={`h-5 w-5 transition-all ${saved
                 ? "fill-accent text-accent scale-110"
                 : "text-muted-foreground"
-            }`}
+              }`}
           />
         </button>
 
@@ -157,13 +138,12 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
           <button
             onClick={handleCompareClick}
             disabled={!canAddMore && !inComparison}
-            className={`flex items-center gap-1 text-xs font-medium transition-colors ${
-              inComparison
+            className={`flex items-center gap-1 text-xs font-medium transition-colors ${inComparison
                 ? "text-accent"
                 : canAddMore
                   ? "text-muted-foreground hover:text-accent"
                   : "text-muted-foreground opacity-50 cursor-not-allowed"
-            }`}
+              }`}
           >
             <Scale className="h-3.5 w-3.5" />
             <span>{inComparison ? "In Comparison" : "Compare"}</span>

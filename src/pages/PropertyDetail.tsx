@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { mockProperties, formatPrice } from "@/data/properties";
+import { mockProperties, formatPrice, Property } from "@/data/properties";
+import { fetchPropertyById, fetchProperties } from "@/services/propertyService";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PropertyCard from "@/components/PropertyCard";
@@ -12,6 +13,7 @@ import NeighborhoodInsights from "@/components/NeighborhoodInsights";
 import InvestmentInsights from "@/components/InvestmentInsights";
 import ReviewForm from "@/components/ReviewForm";
 import ReviewList from "@/components/ReviewList";
+import { useSavedProperties } from "@/hooks/useSavedProperties";
 
 // Phase 1 & 2: Innovative Features
 import VirtualStagingTool from "@/components/innovative/VirtualStagingTool";
@@ -71,13 +73,40 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const PropertyDetail = () => {
   const { id } = useParams();
-  const property = mockProperties.find((p) => p.id === id);
+  const [property, setProperty] = useState<Property | null>(null);
+  const [similar, setSimilar] = useState<Property[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      if (!id) return;
+      setLoading(true);
+      const data = await fetchPropertyById(id);
+      setProperty(data);
+
+      // Fetch similar properties (naive approach: fetch all and filter)
+      if (data) {
+        const allProps = await fetchProperties();
+        setSimilar(allProps.filter(p => p.id !== id && p.location === data.location).slice(0, 3));
+      }
+      setLoading(false);
+    };
+    loadData();
+  }, [id]);
+
   const [activeImg, setActiveImg] = useState(0);
-  const [saved, setSaved] = useState(false);
+  const { isSaved, toggleSave, loading: saveLoading } = useSavedProperties();
+  const saved = property ? isSaved(property.id) : false;
+
+  const handleSaveClick = async () => {
+    if (property) {
+      await toggleSave(property.id);
+    }
+  };
 
   if (!property) {
     return (
@@ -96,9 +125,17 @@ const PropertyDetail = () => {
     );
   }
 
-  const similar = mockProperties
-    .filter((p) => p.id !== property.id && p.location === property.location)
-    .slice(0, 3);
+  if (loading) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <div className="container flex h-[60vh] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -126,9 +163,8 @@ const PropertyDetail = () => {
               <button
                 key={i}
                 onClick={() => setActiveImg(i)}
-                className={`overflow-hidden rounded-lg border-2 transition-colors ${
-                  i === activeImg ? "border-accent" : "border-transparent"
-                }`}
+                className={`overflow-hidden rounded-lg border-2 transition-colors ${i === activeImg ? "border-accent" : "border-transparent"
+                  }`}
               >
                 <img
                   src={img}
@@ -145,11 +181,10 @@ const PropertyDetail = () => {
           <div>
             <div className="flex flex-wrap gap-2">
               <span
-                className={`rounded-md px-3 py-1 text-sm font-semibold ${
-                  property.listingType === "Rent"
-                    ? "bg-badge-rent text-badge-rent-foreground"
-                    : "bg-badge-buy text-badge-buy-foreground"
-                }`}
+                className={`rounded-md px-3 py-1 text-sm font-semibold ${property.listingType === "Rent"
+                  ? "bg-badge-rent text-badge-rent-foreground"
+                  : "bg-badge-buy text-badge-buy-foreground"
+                  }`}
               >
                 For {property.listingType}
               </span>
@@ -225,7 +260,8 @@ const PropertyDetail = () => {
                   <Button
                     variant="outline"
                     className="flex-1 gap-2"
-                    onClick={() => setSaved(!saved)}
+                    onClick={handleSaveClick}
+                    disabled={saveLoading}
                   >
                     <Heart
                       className={`h-4 w-4 ${saved ? "fill-accent text-accent" : ""}`}
@@ -475,7 +511,7 @@ const PropertyDetail = () => {
             </div>
           </div>
           <div>
-            <ReviewForm propertyId={property.id} onSubmitted={() => {}} />
+            <ReviewForm propertyId={property.id} onSubmitted={() => { }} />
           </div>
         </div>
 

@@ -29,6 +29,7 @@ const Navbar = () => {
     { to: "/", label: "Home", icon: Home },
     { to: "/properties", label: "Properties", icon: Search },
     { to: "/recommendations", label: "For You", icon: Heart },
+    { to: "/saved", label: "Saved", icon: Heart },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -61,11 +62,10 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                isActive(link.to)
+              className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${isActive(link.to)
                   ? "bg-accent/10 text-accent"
                   : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-              }`}
+                }`}
             >
               <link.icon className="h-4 w-4" />
               {link.label}
@@ -148,11 +148,10 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${
-                isActive(link.to)
+              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${isActive(link.to)
                   ? "bg-accent/10 text-accent"
                   : "text-muted-foreground"
-              }`}
+                }`}
             >
               <link.icon className="h-4 w-4" />
               {link.label}

@@ -1,0 +1,1372 @@
+[
+  {
+    "id": "1a16ab9b-294d-464a-b967-aba347d3cab4",
+    "title": "Spacious Penthouse in Goa",
+    "description": "Beautiful penthouse located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 17042543,
+    "location": "Goa",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 2000,
+    "amenities": [
+      "Jogging Track",
+      "Power Backup",
+      "CCTV"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-10-26T00:26:59.860Z"
+  },
+  {
+    "id": "7e84b645-ab23-46bf-83ab-a6837c74e06b",
+    "title": "Elegant Penthouse in Goa",
+    "description": "Beautiful penthouse located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for families and professionals.",
+    "price": 99718,
+    "location": "Goa",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "Jogging Track",
+      "Power Backup",
+      "Vastu Compliant",
+      "Water Harvest",
+      "Parking",
+      "Intercom"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Rent",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-16T17:53:33.678Z"
+  },
+  {
+    "id": "9221744f-e89b-488d-9050-878b2e134bcc",
+    "title": "Luxurious Plot in Mumbai",
+    "description": "Beautiful plot located in the heart of Mumbai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 5350 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 98041966,
+    "location": "Mumbai",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 5350,
+    "amenities": [
+      "Jogging Track",
+      "Security",
+      "Gym"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-29T11:32:08.607Z"
+  },
+  {
+    "id": "a1dd5e62-25ca-408d-9e4e-fe7e7ed30e5e",
+    "title": "Modern Independent Floor in Mysore",
+    "description": "Beautiful independent floor located in the heart of Mysore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 16451080,
+    "location": "Mysore",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 2000,
+    "amenities": [
+      "Water Harvest",
+      "Swimming Pool",
+      "Club House"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-01-07T15:46:30.355Z"
+  },
+  {
+    "id": "dd9960c1-3f90-4b6e-885c-b3b766456869",
+    "title": "Spacious Apartment in Noida",
+    "description": "Beautiful apartment located in the heart of Noida. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 44498631,
+    "location": "Noida",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "area": 800,
+    "amenities": [
+      "CCTV",
+      "Club House",
+      "WiFi",
+      "Jogging Track",
+      "Vastu Compliant"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-15T06:21:36.314Z"
+  },
+  {
+    "id": "04d5ff20-7336-444b-9d17-cffaf5e5aaf9",
+    "title": "Premium Independent Floor in Pune",
+    "description": "Beautiful independent floor located in the heart of Pune. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 32535344,
+    "location": "Pune",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "CCTV",
+      "Pet Friendly",
+      "Intercom"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-01-22T02:53:07.626Z"
+  },
+  {
+    "id": "a9f37f99-2a67-4f10-bab5-cdda67301c51",
+    "title": "Affordable Studio in Pune",
+    "description": "Beautiful studio located in the heart of Pune. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 17441354,
+    "location": "Pune",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Security",
+      "Gym",
+      "CCTV",
+      "Pet Friendly",
+      "Jogging Track",
+      "WiFi",
+      "Garden"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-08T19:58:41.547Z"
+  },
+  {
+    "id": "a6a33f23-b025-423b-8282-a3f9fe1d9704",
+    "title": "Spacious Independent Floor in Kolkata",
+    "description": "Beautiful independent floor located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 28273473,
+    "location": "Kolkata",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 1200,
+    "amenities": [
+      "Power Backup",
+      "Security",
+      "Gym"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=2000"
+    ],
+    "createdAt": "2025-11-06T03:20:53.381Z"
+  },
+  {
+    "id": "886ef26c-8ff8-4115-be34-a0fde039c6b3",
+    "title": "Cozy Commercial in Pune",
+    "description": "Beautiful commercial located in the heart of Pune. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 400 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 20502899,
+    "location": "Pune",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 400,
+    "amenities": [
+      "Power Backup",
+      "Lift",
+      "CCTV",
+      "Swimming Pool",
+      "Security"
+    ],
+    "propertyType": "Commercial",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=2076&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-01-27T22:14:35.519Z"
+  },
+  {
+    "id": "9af653c5-718b-4543-a144-642244a45a85",
+    "title": "Spacious Commercial in Mumbai",
+    "description": "Beautiful commercial located in the heart of Mumbai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 400 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 46333356,
+    "location": "Mumbai",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 400,
+    "amenities": [
+      "Jogging Track",
+      "Club House",
+      "Gym",
+      "Power Backup",
+      "Garden",
+      "Intercom",
+      "WiFi"
+    ],
+    "propertyType": "Commercial",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-22T19:09:31.493Z"
+  },
+  {
+    "id": "0839c121-922b-4ec0-b15e-e36c990928c1",
+    "title": "Exclusive Penthouse in New Delhi",
+    "description": "Beautiful penthouse located in the heart of New Delhi. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 22139505,
+    "location": "New Delhi",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "WiFi",
+      "Jogging Track",
+      "Vastu Compliant",
+      "Security"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-2a4d9fdb22d7?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-08T03:06:32.529Z"
+  },
+  {
+    "id": "318b6655-7706-4bd6-ade0-1dc51ca66d5b",
+    "title": "Spacious Plot in Chennai",
+    "description": "Beautiful plot located in the heart of Chennai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 4986 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 42219161,
+    "location": "Chennai",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 4986,
+    "amenities": [
+      "CCTV",
+      "WiFi",
+      "Gym",
+      "Jogging Track",
+      "Power Backup",
+      "Lift",
+      "Security"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-01-03T13:01:46.646Z"
+  },
+  {
+    "id": "305eed06-87a3-4401-9c09-a5b01c48635b",
+    "title": "Luxurious Apartment in Chennai",
+    "description": "Beautiful apartment located in the heart of Chennai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for families and professionals.",
+    "price": 75605,
+    "location": "Chennai",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Gym",
+      "WiFi",
+      "Water Harvest",
+      "Garden",
+      "CCTV"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-10T05:25:02.836Z"
+  },
+  {
+    "id": "b1823de6-c9c5-44a5-9322-5443663db674",
+    "title": "Exclusive Penthouse in Chandigarh",
+    "description": "Beautiful penthouse located in the heart of Chandigarh. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for families and professionals.",
+    "price": 80893,
+    "location": "Chandigarh",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "Lift",
+      "Intercom",
+      "CCTV",
+      "Parking",
+      "Power Backup",
+      "Jogging Track",
+      "Security"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-07T22:40:22.258Z"
+  },
+  {
+    "id": "c32c36ca-20a2-4b8e-bcef-eab0a1fde7cf",
+    "title": "Premium Independent Floor in Kolkata",
+    "description": "Beautiful independent floor located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 8902994,
+    "location": "Kolkata",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Intercom",
+      "Water Harvest",
+      "Parking",
+      "Pet Friendly",
+      "Garden"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-09T20:17:31.355Z"
+  },
+  {
+    "id": "23691308-576f-4d93-a1a6-ee68c78a870f",
+    "title": "Modern Plot in Bangalore",
+    "description": "Beautiful plot located in the heart of Bangalore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 3933 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 44188807,
+    "location": "Bangalore",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 3933,
+    "amenities": [
+      "Intercom",
+      "CCTV",
+      "Water Harvest",
+      "Power Backup",
+      "Club House"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-08T14:51:14.198Z"
+  },
+  {
+    "id": "bae758f5-efaa-493b-b262-897332db78b6",
+    "title": "Affordable Independent Floor in Kolkata",
+    "description": "Beautiful independent floor located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 4880336,
+    "location": "Kolkata",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area": 1600,
+    "amenities": [
+      "Water Harvest",
+      "Power Backup",
+      "Gym",
+      "Vastu Compliant",
+      "Pet Friendly",
+      "CCTV"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-29T16:05:47.621Z"
+  },
+  {
+    "id": "f1ea7059-4daa-4e18-98b4-7ccb8d1895fb",
+    "title": "Exclusive Studio in Bangalore",
+    "description": "Beautiful studio located in the heart of Bangalore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 33167514,
+    "location": "Bangalore",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Vastu Compliant",
+      "Club House",
+      "Jogging Track",
+      "Intercom",
+      "Water Harvest"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-30T13:22:19.612Z"
+  },
+  {
+    "id": "43c9bb9d-97cd-4b7f-8965-4d38c0f290b1",
+    "title": "Prime Villa in Mumbai",
+    "description": "Beautiful villa located in the heart of Mumbai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for families and professionals.",
+    "price": 26457,
+    "location": "Mumbai",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Gym",
+      "Vastu Compliant",
+      "Water Harvest",
+      "Pet Friendly"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-01T22:48:17.870Z"
+  },
+  {
+    "id": "2cc48455-7449-4e83-95a2-c87756e1db7d",
+    "title": "Elegant Apartment in Kolkata",
+    "description": "Beautiful apartment located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for families and professionals.",
+    "price": 60266,
+    "location": "Kolkata",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Vastu Compliant",
+      "Security",
+      "Gym",
+      "Garden"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000"
+    ],
+    "createdAt": "2026-01-05T16:33:39.606Z"
+  },
+  {
+    "id": "f5fba60b-fd0b-4c7c-b203-42345800b0b8",
+    "title": "Elegant Villa in Bangalore",
+    "description": "Beautiful villa located in the heart of Bangalore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 27924981,
+    "location": "Bangalore",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "area": 800,
+    "amenities": [
+      "Water Harvest",
+      "Power Backup",
+      "Jogging Track",
+      "Pet Friendly",
+      "Intercom",
+      "Parking",
+      "Vastu Compliant"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-13T12:52:49.920Z"
+  },
+  {
+    "id": "9428ba9f-7fa2-411b-8771-2efe95a03bb8",
+    "title": "Luxurious Apartment in Bangalore",
+    "description": "Beautiful apartment located in the heart of Bangalore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for families and professionals.",
+    "price": 85507,
+    "location": "Bangalore",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 800,
+    "amenities": [
+      "Swimming Pool",
+      "Power Backup",
+      "Club House"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=2000"
+    ],
+    "createdAt": "2026-02-03T13:49:49.693Z"
+  },
+  {
+    "id": "87905e85-2e56-4955-b260-7d80e81ee9b7",
+    "title": "Exclusive Apartment in Goa",
+    "description": "Beautiful apartment located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for families and professionals.",
+    "price": 48379,
+    "location": "Goa",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 800,
+    "amenities": [
+      "Intercom",
+      "Parking",
+      "Garden"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-20T11:59:16.677Z"
+  },
+  {
+    "id": "64b632c1-9e30-4aa6-a7a0-62eff4a558ed",
+    "title": "Premium Plot in Mysore",
+    "description": "Beautiful plot located in the heart of Mysore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2252 sq.ft of living space. Ideal for families and professionals.",
+    "price": 0,
+    "location": "Mysore",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 2252,
+    "amenities": [
+      "Intercom",
+      "Power Backup",
+      "Parking"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-18T02:11:01.281Z"
+  },
+  {
+    "id": "bef02a91-ed71-46ea-bdb3-77c2d0e76a17",
+    "title": "Elegant Villa in Chennai",
+    "description": "Beautiful villa located in the heart of Chennai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 22460347,
+    "location": "Chennai",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Power Backup",
+      "CCTV",
+      "Lift",
+      "Gym",
+      "Security",
+      "Intercom",
+      "Parking"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-12T11:08:31.723Z"
+  },
+  {
+    "id": "8e1301d0-3883-4688-93dd-e9ff04755891",
+    "title": "Modern Studio in Goa",
+    "description": "Beautiful studio located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 6845376,
+    "location": "Goa",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 800,
+    "amenities": [
+      "Garden",
+      "Swimming Pool",
+      "WiFi",
+      "Power Backup"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=2076&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-24T01:41:33.258Z"
+  },
+  {
+    "id": "06df8483-febd-4fd1-ae80-1d24c3c215a1",
+    "title": "Premium Apartment in Hyderabad",
+    "description": "Beautiful apartment located in the heart of Hyderabad. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for families and professionals.",
+    "price": 27295,
+    "location": "Hyderabad",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Gym",
+      "Jogging Track",
+      "Security"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-10-30T04:23:33.379Z"
+  },
+  {
+    "id": "6df69f3f-8719-48ca-b9ba-5ea705f3c448",
+    "title": "Spacious Penthouse in Chandigarh",
+    "description": "Beautiful penthouse located in the heart of Chandigarh. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 9371590,
+    "location": "Chandigarh",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Gym",
+      "Club House",
+      "Jogging Track",
+      "Water Harvest"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-27T07:51:59.660Z"
+  },
+  {
+    "id": "29cdef79-0fdb-4618-a9b1-fbbcec289da1",
+    "title": "Elegant Studio in New Delhi",
+    "description": "Beautiful studio located in the heart of New Delhi. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for families and professionals.",
+    "price": 37523,
+    "location": "New Delhi",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Security",
+      "Water Harvest",
+      "WiFi",
+      "Lift",
+      "Swimming Pool"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?q=80&w=1974&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-27T08:24:52.004Z"
+  },
+  {
+    "id": "7d053401-cd38-4216-b8a5-ddfe21dbe679",
+    "title": "Cozy Independent Floor in Bangalore",
+    "description": "Beautiful independent floor located in the heart of Bangalore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 5764953,
+    "location": "Bangalore",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "Security",
+      "Water Harvest",
+      "Garden",
+      "WiFi"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=2076&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-13T13:30:04.402Z"
+  },
+  {
+    "id": "d5de743d-b9f2-4093-a8a1-d9c9144c4820",
+    "title": "Premium Commercial in Jaipur",
+    "description": "Beautiful commercial located in the heart of Jaipur. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 400 sq.ft of living space. Ideal for families and professionals.",
+    "price": 86750,
+    "location": "Jaipur",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "area": 400,
+    "amenities": [
+      "Vastu Compliant",
+      "Jogging Track",
+      "WiFi",
+      "Power Backup",
+      "Gym"
+    ],
+    "propertyType": "Commercial",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-01-08T07:20:41.266Z"
+  },
+  {
+    "id": "083de4dc-b65e-4f96-a3b3-052a3c298155",
+    "title": "Elegant Plot in Chennai",
+    "description": "Beautiful plot located in the heart of Chennai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 4082 sq.ft of living space. Ideal for families and professionals.",
+    "price": 0,
+    "location": "Chennai",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "area": 4082,
+    "amenities": [
+      "Intercom",
+      "Garden",
+      "Power Backup",
+      "Pet Friendly",
+      "WiFi"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-04T18:20:28.845Z"
+  },
+  {
+    "id": "75e1efaf-6b5a-4bb0-b675-de986fcd353e",
+    "title": "Spacious Villa in Goa",
+    "description": "Beautiful villa located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for families and professionals.",
+    "price": 101680,
+    "location": "Goa",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "Club House",
+      "WiFi",
+      "Water Harvest"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-07T21:21:38.199Z"
+  },
+  {
+    "id": "c434e466-80e1-4bdc-9039-bf039da575fd",
+    "title": "Cozy Penthouse in Hyderabad",
+    "description": "Beautiful penthouse located in the heart of Hyderabad. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 41657027,
+    "location": "Hyderabad",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area": 1600,
+    "amenities": [
+      "Swimming Pool",
+      "Vastu Compliant",
+      "WiFi",
+      "CCTV",
+      "Pet Friendly"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-10-28T07:56:49.580Z"
+  },
+  {
+    "id": "e191fb07-14fb-4be3-97e5-7a264459e2d8",
+    "title": "Elegant Penthouse in Gurgaon",
+    "description": "Beautiful penthouse located in the heart of Gurgaon. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for families and professionals.",
+    "price": 56173,
+    "location": "Gurgaon",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 2000,
+    "amenities": [
+      "Jogging Track",
+      "Swimming Pool",
+      "Water Harvest",
+      "Pet Friendly",
+      "Gym",
+      "Vastu Compliant",
+      "Lift"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-05T16:10:12.931Z"
+  },
+  {
+    "id": "0826e48d-6967-4e4f-a436-08a2f6472d46",
+    "title": "Premium Independent Floor in Mysore",
+    "description": "Beautiful independent floor located in the heart of Mysore. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 21247328,
+    "location": "Mysore",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Lift",
+      "Water Harvest",
+      "Club House",
+      "Intercom",
+      "Pet Friendly"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-11T23:22:12.070Z"
+  },
+  {
+    "id": "0928a067-a43f-4326-a188-801dace8ad19",
+    "title": "Luxurious Villa in Kolkata",
+    "description": "Beautiful villa located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for families and professionals.",
+    "price": 51983,
+    "location": "Kolkata",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 2000,
+    "amenities": [
+      "Lift",
+      "Water Harvest",
+      "CCTV",
+      "Security"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Rent",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-10-28T18:40:32.679Z"
+  },
+  {
+    "id": "696d2262-dd20-4542-9d83-18144f6801fc",
+    "title": "Prime Penthouse in Noida",
+    "description": "Beautiful penthouse located in the heart of Noida. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 2682226,
+    "location": "Noida",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Garden",
+      "Parking",
+      "Pet Friendly",
+      "WiFi",
+      "Club House",
+      "Water Harvest"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-10-29T19:30:13.315Z"
+  },
+  {
+    "id": "be57c6d1-3614-4daa-a602-ae9059e1165a",
+    "title": "Scenic Independent Floor in Goa",
+    "description": "Beautiful independent floor located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 21273751,
+    "location": "Goa",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Swimming Pool",
+      "Garden",
+      "Jogging Track",
+      "Vastu Compliant",
+      "Lift",
+      "Parking",
+      "Pet Friendly"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-17T22:31:38.437Z"
+  },
+  {
+    "id": "e84747ea-400f-4549-9f2b-18bd176e1f54",
+    "title": "Modern Studio in Goa",
+    "description": "Beautiful studio located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 30256853,
+    "location": "Goa",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "area": 800,
+    "amenities": [
+      "Security",
+      "Swimming Pool",
+      "Garden",
+      "Power Backup"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-01T23:29:14.535Z"
+  },
+  {
+    "id": "ed410eb3-308e-42ef-8ac6-5acb4c074b50",
+    "title": "Modern Penthouse in Kolkata",
+    "description": "Beautiful penthouse located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for families and professionals.",
+    "price": 10215,
+    "location": "Kolkata",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 800,
+    "amenities": [
+      "Jogging Track",
+      "Gym",
+      "Pet Friendly",
+      "Water Harvest"
+    ],
+    "propertyType": "Penthouse",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511452885600-a3d2c9148a31?q=80&w=2021&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-03T20:04:13.543Z"
+  },
+  {
+    "id": "91e4ba32-da04-489a-be86-23bdeafea741",
+    "title": "Affordable Studio in Chennai",
+    "description": "Beautiful studio located in the heart of Chennai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for families and professionals.",
+    "price": 74749,
+    "location": "Chennai",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 1200,
+    "amenities": [
+      "Swimming Pool",
+      "Water Harvest",
+      "Vastu Compliant",
+      "CCTV",
+      "Intercom"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Rent",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-02T13:06:13.772Z"
+  },
+  {
+    "id": "56545715-8e60-42c2-ac55-a7a8ae72eaf7",
+    "title": "Elegant Plot in Mumbai",
+    "description": "Beautiful plot located in the heart of Mumbai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1659 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 53432752,
+    "location": "Mumbai",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 1659,
+    "amenities": [
+      "Security",
+      "Power Backup",
+      "Club House",
+      "Gym"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-13T13:10:45.054Z"
+  },
+  {
+    "id": "c2173e88-7f5a-4521-94e4-8ac606d999ac",
+    "title": "Spacious Apartment in Chandigarh",
+    "description": "Beautiful apartment located in the heart of Chandigarh. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 40947162,
+    "location": "Chandigarh",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "area": 1600,
+    "amenities": [
+      "Vastu Compliant",
+      "Garden",
+      "Pet Friendly",
+      "Gym",
+      "Jogging Track",
+      "Lift"
+    ],
+    "propertyType": "Apartment",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-01-12T02:19:38.650Z"
+  },
+  {
+    "id": "0251b6a7-acdf-486a-bde5-bfbe19fc3b3c",
+    "title": "Modern Independent Floor in Jaipur",
+    "description": "Beautiful independent floor located in the heart of Jaipur. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 44897992,
+    "location": "Jaipur",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 800,
+    "amenities": [
+      "Intercom",
+      "Lift",
+      "Security",
+      "Power Backup",
+      "CCTV",
+      "Jogging Track",
+      "WiFi"
+    ],
+    "propertyType": "Independent Floor",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-04T23:06:19.432Z"
+  },
+  {
+    "id": "a18326ac-6524-4b9c-ba17-7bc1ac44cd49",
+    "title": "Cozy Commercial in Goa",
+    "description": "Beautiful commercial located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 400 sq.ft of living space. Ideal for families and professionals.",
+    "price": 19039,
+    "location": "Goa",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "area": 400,
+    "amenities": [
+      "Lift",
+      "Water Harvest",
+      "Jogging Track",
+      "Garden"
+    ],
+    "propertyType": "Commercial",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-18T13:46:41.266Z"
+  },
+  {
+    "id": "aeb84160-01c4-4930-8d69-3bbc96239f5c",
+    "title": "Premium Studio in Noida",
+    "description": "Beautiful studio located in the heart of Noida. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for families and professionals.",
+    "price": 102243,
+    "location": "Noida",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "area": 800,
+    "amenities": [
+      "Jogging Track",
+      "CCTV",
+      "Power Backup",
+      "WiFi",
+      "Water Harvest",
+      "Gym",
+      "Intercom"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Rent",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-30T21:30:03.965Z"
+  },
+  {
+    "id": "bc9b8a7f-0b3d-4a3f-a38a-444910a12542",
+    "title": "Premium Studio in Chennai",
+    "description": "Beautiful studio located in the heart of Chennai. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for families and professionals.",
+    "price": 89122,
+    "location": "Chennai",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Lift",
+      "Water Harvest",
+      "Power Backup"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Rent",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-13T21:45:44.528Z"
+  },
+  {
+    "id": "22d3f93b-a8aa-41e0-a14f-d4f85c573b60",
+    "title": "Exclusive Plot in Goa",
+    "description": "Beautiful plot located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 4964 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 19193475,
+    "location": "Goa",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 4964,
+    "amenities": [
+      "Jogging Track",
+      "Water Harvest",
+      "Lift",
+      "Security"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-02T07:27:48.063Z"
+  },
+  {
+    "id": "67de8b68-fb96-49de-807a-68b6fe110847",
+    "title": "Scenic Villa in Pune",
+    "description": "Beautiful villa located in the heart of Pune. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 2000 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 36575844,
+    "location": "Pune",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "area": 2000,
+    "amenities": [
+      "Security",
+      "Club House",
+      "Parking",
+      "Jogging Track"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Buy",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-14T21:34:58.335Z"
+  },
+  {
+    "id": "6fb1ea47-a9bc-4c27-bd97-2ec169c2dfb6",
+    "title": "Spacious Commercial in Ahmedabad",
+    "description": "Beautiful commercial located in the heart of Ahmedabad. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 400 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 37708766,
+    "location": "Ahmedabad",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 400,
+    "amenities": [
+      "WiFi",
+      "Security",
+      "Club House",
+      "Intercom",
+      "Jogging Track",
+      "CCTV",
+      "Lift"
+    ],
+    "propertyType": "Commercial",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1511452885600-a3d2c9148a31?q=80&w=2021&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-12-29T00:07:18.077Z"
+  },
+  {
+    "id": "e58339be-3bfd-4c7f-8de8-495ab0677e5c",
+    "title": "Spacious Villa in Goa",
+    "description": "Beautiful villa located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 800 sq.ft of living space. Ideal for families and professionals.",
+    "price": 44371,
+    "location": "Goa",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "area": 800,
+    "amenities": [
+      "Intercom",
+      "CCTV",
+      "Club House",
+      "Vastu Compliant",
+      "Security",
+      "WiFi",
+      "Garden"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Rent",
+    "status": "Under Construction",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-10-28T00:21:00.795Z"
+  },
+  {
+    "id": "879236a6-3872-4eb8-866a-f68205a2e850",
+    "title": "Scenic Plot in Goa",
+    "description": "Beautiful plot located in the heart of Goa. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 3780 sq.ft of living space. Ideal for families and professionals.",
+    "price": 0,
+    "location": "Goa",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "area": 3780,
+    "amenities": [
+      "Vastu Compliant",
+      "WiFi",
+      "Lift",
+      "Intercom",
+      "Security"
+    ],
+    "propertyType": "Plot",
+    "listingType": "Rent",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-03T20:53:29.236Z"
+  },
+  {
+    "id": "9cd429e8-f8cc-4a48-9f41-edff984cf51c",
+    "title": "Luxurious Villa in Kolkata",
+    "description": "Beautiful villa located in the heart of Kolkata. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1600 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 27744313,
+    "location": "Kolkata",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area": 1600,
+    "amenities": [
+      "Security",
+      "Intercom",
+      "Parking",
+      "Power Backup",
+      "Swimming Pool",
+      "CCTV",
+      "Gym"
+    ],
+    "propertyType": "Villa",
+    "listingType": "Buy",
+    "status": "Available",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511452885600-a3d2c9148a31?q=80&w=2021&auto=format&fit=crop"
+    ],
+    "createdAt": "2025-11-10T01:46:22.609Z"
+  },
+  {
+    "id": "73bcbb6c-561c-407e-a730-03bc8b1b9f90",
+    "title": "Modern Studio in Ahmedabad",
+    "description": "Beautiful studio located in the heart of Ahmedabad. Close to major landmarks, schools, and hospitals. This property offers a perfect blend of comfort and luxury with 1200 sq.ft of living space. Ideal for investment or end-use.",
+    "price": 39422630,
+    "location": "Ahmedabad",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "area": 1200,
+    "amenities": [
+      "Swimming Pool",
+      "Pet Friendly",
+      "Jogging Track",
+      "CCTV",
+      "Club House"
+    ],
+    "propertyType": "Studio",
+    "listingType": "Buy",
+    "status": "Sold",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "createdAt": "2026-02-05T23:52:42.506Z"
+  }
+]
