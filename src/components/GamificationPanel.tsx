@@ -81,7 +81,7 @@ const GamificationPanel = () => {
       setStreak(newStreak);
       localStorage.setItem("property_hunt_streak", JSON.stringify(newStreak));
     }
-  }, []);
+  }, [streak.count, streak.lastVisit]);
 
   return (
     <div className="rounded-xl border border-border bg-card p-6">

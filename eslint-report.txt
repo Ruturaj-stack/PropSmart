@@ -1,0 +1,67 @@
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ChatbotWidget.tsx[24m[0m
+[0m  [2m32:24[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ConfettiEffect.tsx[24m[0m
+[0m  [2m8:14[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\GamificationPanel.tsx[24m[0m
+[0m  [2m84:6[22m  [33mwarning[39m  React Hook useEffect has missing dependencies: 'streak.count' and 'streak.lastVisit'. Either include them or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\PropertyComparison.tsx[24m[0m
+[0m  [2m211:16[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ReviewList.tsx[24m[0m
+[0m  [2m26:6[22m  [33mwarning[39m  React Hook useEffect has missing dependencies: 'fetchRating' and 'fetchReviews'. Either include them or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\SearchFilters.tsx[24m[0m
+[0m  [2m17:14[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\VoiceSearch.tsx[24m[0m
+[0m  [2m18:33[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m23:18[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m24:18[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m48:36[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m59:35[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\badge.tsx[24m[0m
+[0m  [2m29:17[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\button.tsx[24m[0m
+[0m  [2m47:18[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\command.tsx[24m[0m
+[0m  [2m24:11[22m  [31merror[39m  An interface declaring no members is equivalent to its supertype  [2m@typescript-eslint/no-empty-object-type[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\form.tsx[24m[0m
+[0m  [2m129:10[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\navigation-menu.tsx[24m[0m
+[0m  [2m111:3[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\sidebar.tsx[24m[0m
+[0m  [2m636:3[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\sonner.tsx[24m[0m
+[0m  [2m27:19[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\textarea.tsx[24m[0m
+[0m  [2m5:18[22m  [31merror[39m  An interface declaring no members is equivalent to its supertype  [2m@typescript-eslint/no-empty-object-type[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\toggle.tsx[24m[0m
+[0m  [2m37:18[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\contexts\AuthContext.tsx[24m[0m
+[0m  [2m89:14[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\contexts\ComparisonContext.tsx[24m[0m
+[0m  [2m90:17[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\hooks\useRecentlyViewed.ts[24m[0m
+[0m  [2m44:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'fetchRecentlyViewed'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\pages\Register.tsx[24m[0m
+[0m  [2m42:21[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[31m[1m✖ 24 problems (10 errors, 14 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

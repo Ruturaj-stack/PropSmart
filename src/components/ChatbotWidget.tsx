@@ -27,9 +27,11 @@ const ChatbotWidget = () => {
   useEffect(() => {
     const saved = localStorage.getItem("chatbot_messages");
     if (saved) {
-      const parsed = JSON.parse(saved);
+      const parsed = JSON.parse(saved) as Array<
+        Omit<Message, "timestamp"> & { timestamp: string }
+      >;
       setMessages(
-        parsed.map((m: any) => ({
+        parsed.map((m) => ({
           ...m,
           timestamp: new Date(m.timestamp),
         })),

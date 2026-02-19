@@ -15,15 +15,16 @@ const VoiceSearch = ({ onSearch }: VoiceSearchProps) => {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState("");
   const { toast } = useToast();
-  const recognitionRef = useRef<any>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   const startListening = () => {
     // Check for browser support
-    const SpeechRecognition =
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const SpeechRecognitionClass =
       (window as any).SpeechRecognition ||
       (window as any).webkitSpeechRecognition;
 
-    if (!SpeechRecognition) {
+    if (!SpeechRecognitionClass) {
       toast({
         title: "Not supported",
         description: "Voice search is not supported in your browser",
@@ -32,7 +33,7 @@ const VoiceSearch = ({ onSearch }: VoiceSearchProps) => {
       return;
     }
 
-    const recognition = new SpeechRecognition();
+    const recognition = new SpeechRecognitionClass();
     recognition.continuous = false;
     recognition.interimResults = true;
     recognition.lang = "en-IN";
@@ -45,6 +46,7 @@ const VoiceSearch = ({ onSearch }: VoiceSearchProps) => {
       });
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (event: any) => {
       const current = event.resultIndex;
       const text = event.results[current][0].transcript;
@@ -56,6 +58,7 @@ const VoiceSearch = ({ onSearch }: VoiceSearchProps) => {
       }
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onerror = (event: any) => {
       console.error("Speech recognition error:", event.error);
       toast({

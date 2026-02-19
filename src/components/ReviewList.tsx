@@ -23,6 +23,7 @@ const ReviewList = ({ propertyId }: ReviewListProps) => {
   useEffect(() => {
     fetchReviews();
     fetchRating();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [propertyId]);
 
   const fetchReviews = async () => {

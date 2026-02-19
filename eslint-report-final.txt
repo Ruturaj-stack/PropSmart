@@ -1,0 +1,42 @@
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ConfettiEffect.tsx[24m[0m
+[0m  [2m8:14[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\SearchFilters.tsx[24m[0m
+[0m  [2m17:14[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\VoiceSearch.tsx[24m[0m
+[0m  [2m23:5[22m   [33mwarning[39m  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')[0m
+[0m  [2m25:18[22m  [31merror[39m    Unexpected any. Specify a different type                                                               [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m26:18[22m  [31merror[39m    Unexpected any. Specify a different type                                                               [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\badge.tsx[24m[0m
+[0m  [2m29:17[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\button.tsx[24m[0m
+[0m  [2m47:18[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\form.tsx[24m[0m
+[0m  [2m129:10[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\navigation-menu.tsx[24m[0m
+[0m  [2m111:3[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\sidebar.tsx[24m[0m
+[0m  [2m636:3[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\sonner.tsx[24m[0m
+[0m  [2m27:19[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\components\ui\toggle.tsx[24m[0m
+[0m  [2m37:18[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\contexts\AuthContext.tsx[24m[0m
+[0m  [2m89:14[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\Ruturaj\OneDrive\Desktop\FYP\PropSmart\src\contexts\ComparisonContext.tsx[24m[0m
+[0m  [2m90:17[22m  [33mwarning[39m  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  [2mreact-refresh/only-export-components[22m[0m
+[0m[0m
+[0m[31m[1m✖ 14 problems (2 errors, 12 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[31m[1m  0 errors and 1 warning potentially fixable with the `--fix` option.[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

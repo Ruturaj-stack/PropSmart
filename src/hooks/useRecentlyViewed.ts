@@ -41,6 +41,7 @@ export function useRecentlyViewed(limit: number = 10): UseRecentlyViewedReturn {
 
   useEffect(() => {
     fetchRecentlyViewed();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [limit]);
 
   return {

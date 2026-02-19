@@ -45,7 +45,7 @@ const AdvancedFilters = ({ onFilterChange }: AdvancedFiltersProps) => {
     "Club House",
   ];
 
-  const updateFilters = (key: keyof PropertyFilters, value: any) => {
+  const updateFilters = (key: keyof PropertyFilters, value: unknown) => {
     const newFilters = { ...filters, [key]: value };
     setFilters(newFilters);
     onFilterChange(newFilters);
@@ -53,7 +53,7 @@ const AdvancedFilters = ({ onFilterChange }: AdvancedFiltersProps) => {
 
   const toggleArrayItem = (
     key: "bedrooms" | "propertyTypes" | "amenities",
-    item: any,
+    item: unknown,
   ) => {
     const current = filters[key];
     const newValue = current.includes(item)

@@ -12,7 +12,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatPrice } from "@/data/properties";
+import { formatPrice, type Property } from "@/data/properties";
 import { calculatePropertyScore } from "@/services/propertyScoring";
 import { calculateInvestmentInsights } from "@/services/investmentAnalytics";
 import { Link } from "react-router-dom";
@@ -149,12 +149,6 @@ const PropertyComparison = () => {
               properties={selectedProperties}
             />
 
-            {/* Furnishing */}
-            <ComparisonRow
-              label="Furnishing"
-              values={selectedProperties.map((p) => p.furnishing)}
-            />
-
             {/* Amenities Count */}
             <ComparisonRow
               label="Amenities"
@@ -208,7 +202,7 @@ interface ComparisonRowProps {
   icon?: React.ReactNode;
   values: string[];
   highlight?: "highest" | "lowest";
-  properties?: any[];
+  properties?: Property[];
 }
 
 function ComparisonRow({
