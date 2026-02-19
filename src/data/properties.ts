@@ -8,9 +8,9 @@ export interface Property {
   bathrooms: number;
   area: number;
   amenities: string[];
-  propertyType: "Apartment" | "Villa" | "House" | "PG";
+  propertyType: "Apartment" | "Villa" | "House" | "PG" | "Plot" | "Commercial" | "Penthouse" | "Studio" | "Independent Floor";
   listingType: "Rent" | "Buy";
-  status: "Available" | "Sold" | "Rented";
+  status: "Available" | "Sold" | "Rented" | "Under Construction";
   images: string[];
   createdAt: string;
 }
@@ -25,16 +25,20 @@ export interface UserPreferences {
 
 export const LOCATIONS = [
   "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai",
-  "Pune", "Kolkata", "Ahmedabad", "Jaipur", "Goa"
+  "Pune", "Kolkata", "Ahmedabad", "Jaipur", "Goa",
+  "Noida", "New Delhi", "Chandigarh", "Kochi", "Mysore", "Gurgaon"
 ];
 
 export const AMENITIES = [
   "Swimming Pool", "Gym", "Parking", "Garden", "Security",
-  "Power Backup", "Elevator", "Clubhouse", "Play Area", "Wi-Fi",
-  "CCTV", "Intercom", "Rain Water Harvesting", "Jogging Track"
+  "Power Backup", "Elevator", "Club House", "Play Area", "Wi-Fi",
+  "CCTV", "Intercom", "Water Harvest", "Jogging Track", "Vastu Compliant", "Pet Friendly"
 ];
 
-export const PROPERTY_TYPES = ["Apartment", "Villa", "House", "PG"] as const;
+export const PROPERTY_TYPES = [
+  "Apartment", "Villa", "House", "PG",
+  "Plot", "Commercial", "Penthouse", "Studio", "Independent Floor"
+] as const;
 
 const propertyImages = [
   "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",

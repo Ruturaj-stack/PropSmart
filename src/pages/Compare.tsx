@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PropertyComparison from "@/components/PropertyComparison";
 import ComparisonRadarChart from "@/components/ComparisonRadarChart";
-import { mockProperties, Property } from "@/data/properties";
+import { Property } from "@/data/properties";
 import { AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";

@@ -19,6 +19,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import InnovationHub from "./pages/InnovationHub";
 import NotFound from "./pages/NotFound";
+import SavedPropertiesPage from "./pages/SavedPropertiesPage";
 import { ThemeProvider } from "next-themes";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
                 <Route path="/properties" element={<Properties />} />
                 <Route path="/property/:id" element={<PropertyDetail />} />
                 <Route path="/recommendations" element={<Recommendations />} />
+                <Route path="/saved" element={<SavedPropertiesPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<NotFound />} />

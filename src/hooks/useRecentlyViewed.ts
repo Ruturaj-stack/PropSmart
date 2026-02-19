@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getRecentlyViewed } from '@/integrations/supabase/behavior';
-import { mockProperties } from '@/data/properties';
+import { fetchProperties } from '@/services/propertyService';
 import type { Property } from '@/data/properties';
 
 interface UseRecentlyViewedReturn {
@@ -22,14 +22,14 @@ export function useRecentlyViewed(limit: number = 10): UseRecentlyViewedReturn {
     try {
       setLoading(true);
       setError(null);
-      
+
       const recentData = await getRecentlyViewed(limit);
-      
-      // Match with mock properties
+      const allProperties = await fetchProperties();
+
       const properties = recentData
-        .map(recent => mockProperties.find(p => p.id === recent.property_id))
+        .map(recent => allProperties.find(p => p.id === recent.property_id))
         .filter((p): p is Property => p !== undefined);
-      
+
       setRecentlyViewed(properties);
     } catch (err) {
       setError(err as Error);

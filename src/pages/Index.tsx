@@ -1,17 +1,18 @@
 import Hero from "@/components/Hero";
 import PropertyCard from "@/components/PropertyCard";
-import SavedProperties from "@/components/SavedProperties";
 import RecentlyViewed from "@/components/RecentlyViewed";
 import AnimatedStats from "@/components/AnimatedStats";
 import GamificationPanel from "@/components/GamificationPanel";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { mockProperties } from "@/data/properties";
+import { Property } from "@/data/properties";
+import { fetchProperties } from "@/services/propertyService";
 import {
   getRecommendations,
   DEFAULT_PREFERENCES,
 } from "@/data/recommendations";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Sparkles,
@@ -24,14 +25,21 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
-  const featured = mockProperties
-    .filter((p) => p.status === "Available")
-    .slice(0, 4);
-  const recommended = getRecommendations(
-    mockProperties,
-    DEFAULT_PREFERENCES,
-    4,
-  );
+  const [featured, setFeatured] = useState<Property[]>([]);
+  const [recommended, setRecommended] = useState<{ property: Property; score: number; reasons: string[] }[]>([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await fetchProperties();
+      setFeatured(data.slice(0, 4));
+      setRecommended(getRecommendations(
+        data,
+        DEFAULT_PREFERENCES,
+        4,
+      ));
+    };
+    loadData();
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -109,11 +117,6 @@ const Index = () => {
       {/* Recently Viewed */}
       <section className="container py-8">
         <RecentlyViewed />
-      </section>
-
-      {/* Saved Properties */}
-      <section className="container py-8">
-        <SavedProperties />
       </section>
 
       {/* Recommended */}
