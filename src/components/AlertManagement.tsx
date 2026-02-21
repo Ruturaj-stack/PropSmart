@@ -151,11 +151,7 @@ const AlertManagement = () => {
       )}
 
       {/* Alerts List */}
-      {loading ? (
-        <div className="p-8 text-center text-muted-foreground">
-          Loading alerts...
-        </div>
-      ) : alerts.length === 0 ? (
+      {alerts.length === 0 && !loading ? (
         <div className="rounded-xl border border-border bg-card p-12 text-center">
           <Bell className="mx-auto h-16 w-16 text-muted-foreground opacity-50" />
           <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
@@ -278,7 +274,7 @@ function CreateAlertForm({ onClose, onCreated }: CreateAlertFormProps) {
         <select
           value={alertType}
           onChange={(e) => setAlertType(e.target.value as AlertType)}
-          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:ring-2 focus:ring-accent/30"
+          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:ring-2 focus:ring-accent/30 dark:bg-slate-900 dark:text-slate-100 transition-colors"
         >
           <option value="price_drop">Price Drop</option>
           <option value="new_listing">New Listings</option>
@@ -299,7 +295,7 @@ function CreateAlertForm({ onClose, onCreated }: CreateAlertFormProps) {
             setCriteria({ ...criteria, location: e.target.value })
           }
           placeholder="e.g., Bangalore, Mumbai"
-          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:ring-2 focus:ring-accent/30"
+          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:ring-2 focus:ring-accent/30 dark:bg-slate-900 dark:text-slate-100 transition-colors"
         />
       </div>
 
@@ -313,7 +309,7 @@ function CreateAlertForm({ onClose, onCreated }: CreateAlertFormProps) {
           onChange={(e) =>
             setCriteria({ ...criteria, propertyType: e.target.value })
           }
-          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:ring-2 focus:ring-accent/30"
+          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:ring-2 focus:ring-accent/30 dark:bg-slate-900 dark:text-slate-100 transition-colors"
         >
           <option value="">All Types</option>
           <option value="Apartment">Apartment</option>

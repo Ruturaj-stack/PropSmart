@@ -70,7 +70,7 @@ const PropertyComparison = () => {
                 <th key={property.id} className="min-w-[250px] p-4">
                   <div className="relative">
                     {/* Property Image */}
-                    <Link to={`/property/${property.id}`}>
+                    <Link to={`/properties/${property.slug}`}>
                       <img
                         src={property.images[0]}
                         alt={property.title}
@@ -85,7 +85,7 @@ const PropertyComparison = () => {
                       <X className="h-4 w-4" />
                     </button>
                     {/* Title */}
-                    <Link to={`/property/${property.id}`}>
+                    <Link to={`/properties/${property.slug}`}>
                       <h3 className="mt-2 font-semibold text-card-foreground line-clamp-2 hover:text-accent">
                         {property.title}
                       </h3>

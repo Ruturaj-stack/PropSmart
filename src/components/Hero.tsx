@@ -26,7 +26,10 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div
+          className="absolute inset-0"
+          style={{ background: "var(--gradient-hero)" }}
+        />
       </div>
 
       <div className="container relative z-10 py-20">
@@ -35,7 +38,8 @@ const Hero = () => {
             Find Your <span className="text-gradient-warm">Perfect Home</span>
           </h1>
           <p className="mt-4 text-lg text-primary-foreground/80">
-            Smart recommendations powered by your preferences. Discover apartments, villas, and more across India's top cities.
+            Smart recommendations powered by your preferences. Discover
+            apartments, villas, and more across India's top cities.
           </p>
         </div>
 
@@ -48,22 +52,26 @@ const Hero = () => {
             <MapPin className="h-5 w-5 shrink-0 text-accent" />
             <select
               value={search.location}
-              onChange={(e) => setSearch({ ...search, location: e.target.value })}
-              className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+              onChange={(e) =>
+                setSearch({ ...search, location: e.target.value })
+              }
+              className="w-full bg-transparent text-sm font-medium text-foreground outline-none dark:text-slate-100 [&>option]:dark:bg-slate-900 [&>option]:dark:text-slate-100"
             >
               <option value="">All Locations</option>
               {LOCATIONS.map((loc) => (
-                <option key={loc} value={loc}>{loc}</option>
+                <option key={loc} value={loc}>
+                  {loc}
+                </option>
               ))}
             </select>
           </div>
 
-          <div className="flex flex-1 items-center gap-2 border-b border-border px-4 py-3 sm:border-b-0 sm:border-r">
+          <div className="flex flex-1 items-center gap-2 border-border px-4 py-3 sm:border-r">
             <Home className="h-5 w-5 shrink-0 text-accent" />
             <select
               value={search.type}
               onChange={(e) => setSearch({ ...search, type: e.target.value })}
-              className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+              className="w-full bg-transparent text-sm font-medium text-foreground outline-none dark:text-slate-100 [&>option]:dark:bg-slate-900 [&>option]:dark:text-slate-100"
             >
               <option value="">All Types</option>
               <option value="Apartment">Apartment</option>
@@ -78,7 +86,7 @@ const Hero = () => {
             <select
               value={search.budget}
               onChange={(e) => setSearch({ ...search, budget: e.target.value })}
-              className="w-full bg-transparent text-sm font-medium text-foreground outline-none"
+              className="w-full bg-transparent text-sm font-medium text-foreground outline-none dark:text-slate-100 [&>option]:dark:bg-slate-900 [&>option]:dark:text-slate-100"
             >
               <option value="">Any Budget</option>
               <option value="0-20000">Rent: Under ₹20K/mo</option>
@@ -102,14 +110,19 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-10 flex gap-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+        <div
+          className="mt-10 flex gap-8 animate-fade-up"
+          style={{ animationDelay: "0.4s" }}
+        >
           {[
             { value: "1,200+", label: "Properties" },
             { value: "50+", label: "Cities" },
             { value: "10K+", label: "Happy Users" },
           ].map((stat) => (
             <div key={stat.label}>
-              <p className="font-display text-2xl font-bold text-primary-foreground">{stat.value}</p>
+              <p className="font-display text-2xl font-bold text-primary-foreground">
+                {stat.value}
+              </p>
               <p className="text-sm text-primary-foreground/60">{stat.label}</p>
             </div>
           ))}

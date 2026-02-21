@@ -7,6 +7,8 @@ import PropertyScore from "./PropertyScore";
 import { calculatePropertyScore } from "@/services/propertyScoring";
 import { useComparison } from "@/contexts/ComparisonContext";
 import { useSavedProperties } from "@/hooks/useSavedProperties";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 import { trackPropertyClick } from "@/integrations/supabase/behavior";
 
 interface PropertyCardProps {
@@ -18,6 +20,9 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
   const { isSaved, toggleSave, loading: saveLoading } = useSavedProperties();
   const { addToComparison, removeFromComparison, isInComparison, canAddMore } =
     useComparison();
+
+  const { user } = useAuth();
+  const { toast } = useToast();
 
   const saved = isSaved(property.id);
 
@@ -31,8 +36,23 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
 
     if (saveLoading) return;
 
+    if (!user) {
+      toast({
+        title: "Login required",
+        description: "Sign in to add properties to your wishlist",
+        variant: "destructive",
+      });
+      return;
+    }
+
     try {
       await toggleSave(property.id);
+      toast({
+        title: !saved ? "Added to wishlist" : "Removed from wishlist",
+        description: !saved
+          ? "Property saved successfully"
+          : "Property removed from your list",
+      });
     } catch (error) {
       console.error("Error toggling save:", error);
     }
@@ -44,8 +64,16 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
 
     if (inComparison) {
       removeFromComparison(property.id);
+      toast({
+        title: "Removed from comparison",
+        description: "Property removed from comparison list",
+      });
     } else if (canAddMore) {
       addToComparison(property);
+      toast({
+        title: "Added to comparison",
+        description: "Ready to compare side-by-side",
+      });
     }
   };
 
@@ -55,7 +83,7 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
 
   return (
     <Link
-      to={`/property/${property.id}`}
+      to={`/properties/${property.slug}`}
       onClick={handleClick}
       className="group block overflow-hidden rounded-xl bg-card shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
     >
@@ -72,10 +100,11 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
         {/* Badges */}
         <div className="absolute left-3 top-3 flex gap-2">
           <span
-            className={`rounded-md px-2.5 py-1 text-xs font-semibold ${property.listingType === "Rent"
+            className={`rounded-md px-2.5 py-1 text-xs font-semibold ${
+              property.listingType === "Rent"
                 ? "bg-badge-rent text-badge-rent-foreground"
                 : "bg-badge-buy text-badge-buy-foreground"
-              }`}
+            }`}
           >
             {property.listingType}
           </span>
@@ -96,10 +125,11 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
           className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-card/90 backdrop-blur-sm transition-all hover:bg-card hover:scale-110 disabled:opacity-50"
         >
           <Heart
-            className={`h-5 w-5 transition-all ${saved
+            className={`h-5 w-5 transition-all ${
+              saved
                 ? "fill-accent text-accent scale-110"
                 : "text-muted-foreground"
-              }`}
+            }`}
           />
         </button>
 
@@ -138,12 +168,13 @@ const PropertyCard = ({ property, reasons }: PropertyCardProps) => {
           <button
             onClick={handleCompareClick}
             disabled={!canAddMore && !inComparison}
-            className={`flex items-center gap-1 text-xs font-medium transition-colors ${inComparison
+            className={`flex items-center gap-1 text-xs font-medium transition-colors ${
+              inComparison
                 ? "text-accent"
                 : canAddMore
                   ? "text-muted-foreground hover:text-accent"
                   : "text-muted-foreground opacity-50 cursor-not-allowed"
-              }`}
+            }`}
           >
             <Scale className="h-3.5 w-3.5" />
             <span>{inComparison ? "In Comparison" : "Compare"}</span>

@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Star, ThumbsUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { createReview } from "@/integrations/supabase/reviews";
+import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 interface ReviewFormProps {
   propertyId: string;
@@ -18,10 +20,20 @@ const ReviewForm = ({ propertyId, onSubmitted }: ReviewFormProps) => {
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const { user } = useAuth();
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!user) {
+      toast({
+        title: "Login required",
+        description: "Please sign in to write a review",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (rating === 0) {
       toast({

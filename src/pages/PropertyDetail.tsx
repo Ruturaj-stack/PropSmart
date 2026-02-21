@@ -1,6 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { mockProperties, formatPrice, Property } from "@/data/properties";
-import { fetchPropertyById, fetchProperties } from "@/services/propertyService";
+import {
+  fetchPropertyBySlug,
+  fetchProperties,
+} from "@/services/propertyService";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PropertyCard from "@/components/PropertyCard";
@@ -15,28 +18,11 @@ import ReviewForm from "@/components/ReviewForm";
 import ReviewList from "@/components/ReviewList";
 import { useSavedProperties } from "@/hooks/useSavedProperties";
 
-// Phase 1 & 2: Innovative Features
-import VirtualStagingTool from "@/components/innovative/VirtualStagingTool";
-import SunlightSimulator from "@/components/innovative/SunlightSimulator";
-import CommuteMaps from "@/components/innovative/CommuteMaps";
-import StreetViewHistory from "@/components/innovative/StreetViewHistory";
-import NoisePollutionMap from "@/components/innovative/NoisePollutionMap";
+// 5 Core AI Features
 import PropertyValuePredictor from "@/components/innovative/PropertyValuePredictor";
-import SmartPhotoAnalyzer from "@/components/innovative/SmartPhotoAnalyzer";
-import NeighborhoodSentiment from "@/components/innovative/NeighborhoodSentiment";
-import AIInteriorDesigner from "@/components/innovative/AIInteriorDesigner";
-
-// Phase 3 & 4 & 5: Data-Driven Insights, Social, Gamification
-import NeighborhoodDNA from "@/components/innovative/NeighborhoodDNA";
-import DisasterRiskAnalysis from "@/components/innovative/DisasterRiskAnalysis";
-import SchoolPerformanceDashboard from "@/components/innovative/SchoolPerformanceDashboard";
+import VirtualStagingTool from "@/components/innovative/VirtualStagingTool";
 import HiddenCostsCalculator from "@/components/innovative/HiddenCostsCalculator";
-import NeighborConnect from "@/components/innovative/NeighborConnect";
-import FamilyDecisionBoard from "@/components/innovative/FamilyDecisionBoard";
-import ExpertMarketplace from "@/components/innovative/ExpertMarketplace";
-import VirtualOpenHouse from "@/components/innovative/VirtualOpenHouse";
-import PropertyQuestSystem from "@/components/innovative/PropertyQuestSystem";
-import InvestmentSimulator from "@/components/innovative/InvestmentSimulator";
+import CommuteMaps from "@/components/innovative/CommuteMaps";
 import SustainabilityScore from "@/components/innovative/SustainabilityScore";
 
 import {
@@ -49,25 +35,10 @@ import {
   Share2,
   Phone,
   Sparkles,
-  Palette,
-  Sun,
-  Map,
-  Clock,
-  Volume2,
   TrendingUp,
-  Camera,
-  MessageCircle,
-  Home,
-  Dna,
-  Shield,
-  GraduationCap,
+  Palette,
   DollarSign,
-  Users,
-  Vote,
-  Hammer,
-  Video,
-  Trophy,
-  PieChart,
+  Map,
   Leaf,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -76,27 +47,31 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState, useEffect } from "react";
 
 const PropertyDetail = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [property, setProperty] = useState<Property | null>(null);
   const [similar, setSimilar] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
-      if (!id) return;
+      if (!slug) return;
       setLoading(true);
-      const data = await fetchPropertyById(id);
+      const data = await fetchPropertyBySlug(slug);
       setProperty(data);
 
       // Fetch similar properties (naive approach: fetch all and filter)
       if (data) {
         const allProps = await fetchProperties();
-        setSimilar(allProps.filter(p => p.id !== id && p.location === data.location).slice(0, 3));
+        setSimilar(
+          allProps
+            .filter((p) => p.slug !== slug && p.location === data.location)
+            .slice(0, 3),
+        );
       }
       setLoading(false);
     };
     loadData();
-  }, [id]);
+  }, [slug]);
 
   const [activeImg, setActiveImg] = useState(0);
   const { isSaved, toggleSave, loading: saveLoading } = useSavedProperties();
@@ -108,7 +83,7 @@ const PropertyDetail = () => {
     }
   };
 
-  if (!property) {
+  if (!property && !loading) {
     return (
       <div className="min-h-screen">
         <Navbar />
@@ -125,18 +100,8 @@ const PropertyDetail = () => {
     );
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen">
-        <Navbar />
-        <div className="container flex h-[60vh] items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
+  // Render something even if property is null (e.g. empty skeleton skeleton or just the layout)
+  // For "instant" feel, we render the structure.
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -151,20 +116,23 @@ const PropertyDetail = () => {
 
         {/* Images */}
         <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_300px]">
-          <div className="overflow-hidden rounded-xl">
-            <img
-              src={property.images[activeImg]}
-              alt={property.title}
-              className="aspect-[16/10] w-full object-cover"
-            />
+          <div className="overflow-hidden rounded-xl bg-secondary">
+            {property?.images[activeImg] && (
+              <img
+                src={property.images[activeImg]}
+                alt={property.title}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            )}
           </div>
           <div className="flex gap-2 lg:flex-col">
-            {property.images.map((img, i) => (
+            {property?.images.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setActiveImg(i)}
-                className={`overflow-hidden rounded-lg border-2 transition-colors ${i === activeImg ? "border-accent" : "border-transparent"
-                  }`}
+                className={`overflow-hidden rounded-lg border-2 transition-colors ${
+                  i === activeImg ? "border-accent" : "border-transparent"
+                }`}
               >
                 <img
                   src={img}
@@ -181,31 +149,34 @@ const PropertyDetail = () => {
           <div>
             <div className="flex flex-wrap gap-2">
               <span
-                className={`rounded-md px-3 py-1 text-sm font-semibold ${property.listingType === "Rent"
-                  ? "bg-badge-rent text-badge-rent-foreground"
-                  : "bg-badge-buy text-badge-buy-foreground"
-                  }`}
+                className={`rounded-md px-3 py-1 text-sm font-semibold ${
+                  property?.listingType === "Rent"
+                    ? "bg-badge-rent text-badge-rent-foreground"
+                    : "bg-badge-buy text-badge-buy-foreground"
+                }`}
               >
-                For {property.listingType}
+                For {property?.listingType || "..."}
               </span>
-              <Badge variant="secondary">{property.propertyType}</Badge>
-              <Badge variant="secondary">{property.status}</Badge>
+              <Badge variant="secondary">
+                {property?.propertyType || "..."}
+              </Badge>
+              <Badge variant="secondary">{property?.status || "..."}</Badge>
               <PropertyBadge type="verified" />
               <PropertyBadge type="trending" />
             </div>
 
             <h1 className="mt-4 font-display text-3xl font-bold text-foreground">
-              {property.title}
+              {property?.title || "Loading property..."}
             </h1>
             <div className="mt-2 flex items-center gap-1 text-muted-foreground">
-              <MapPin className="h-4 w-4" /> {property.location}
+              <MapPin className="h-4 w-4" /> {property?.location || "..."}
             </div>
 
             <div className="mt-6 flex gap-6">
               {[
-                { icon: Bed, label: `${property.bedrooms} Bedrooms` },
-                { icon: Bath, label: `${property.bathrooms} Bathrooms` },
-                { icon: Maximize, label: `${property.area} sq ft` },
+                { icon: Bed, label: `${property?.bedrooms || 0} Bedrooms` },
+                { icon: Bath, label: `${property?.bathrooms || 0} Bathrooms` },
+                { icon: Maximize, label: `${property?.area || 0} sq ft` },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -221,7 +192,7 @@ const PropertyDetail = () => {
                 Description
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                {property.description}
+                {property?.description || "..."}
               </p>
             </div>
 
@@ -230,7 +201,7 @@ const PropertyDetail = () => {
                 Amenities
               </h2>
               <div className="mt-3 flex flex-wrap gap-2">
-                {property.amenities.map((a) => (
+                {property?.amenities.map((a) => (
                   <Badge key={a} variant="secondary" className="px-3 py-1.5">
                     {a}
                   </Badge>
@@ -243,9 +214,11 @@ const PropertyDetail = () => {
           <div className="space-y-6">
             <div className="h-fit rounded-xl border border-border bg-card p-6 shadow-card">
               <p className="font-display text-3xl font-bold text-foreground">
-                {formatPrice(property.price, property.listingType)}
+                {property
+                  ? formatPrice(property.price, property.listingType)
+                  : "..."}
               </p>
-              {property.listingType === "Rent" && (
+              {property?.listingType === "Rent" && (
                 <p className="text-sm text-muted-foreground">per month</p>
               )}
 
@@ -279,7 +252,7 @@ const PropertyDetail = () => {
                   EMI Estimate
                 </p>
                 <p className="mt-1 font-display text-lg font-semibold text-foreground">
-                  {property.listingType === "Buy"
+                  {property?.listingType === "Buy"
                     ? `₹${Math.round(property.price * 0.007).toLocaleString("en-IN")}/mo`
                     : "N/A"}
                 </p>
@@ -290,7 +263,7 @@ const PropertyDetail = () => {
             </div>
 
             <PropertyTimeline
-              propertyId={property.id}
+              propertyId={property?.id || ""}
               listedDate="2024-01-15"
             />
           </div>
@@ -301,174 +274,57 @@ const PropertyDetail = () => {
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="h-6 w-6 text-accent animate-pulse" />
             <h2 className="font-display text-2xl font-bold text-foreground">
-              20 Next-Gen AI Features
+              AI-Powered Tools
             </h2>
           </div>
 
-          <Tabs defaultValue="staging" className="w-full">
-            {/* Responsive Grid: 4 cols on mobile, 10 cols on lg, 20 cols on xl */}
+          <Tabs defaultValue="value" className="w-full">
             <div className="overflow-x-auto pb-2">
               <TabsList className="inline-flex w-max gap-1 p-1">
-                {/* Phase 1 & 2: Visual & AI */}
-                <TabsTrigger value="staging" className="gap-2">
-                  <Palette className="h-4 w-4" /> Staging
-                </TabsTrigger>
-                <TabsTrigger value="sunlight" className="gap-2">
-                  <Sun className="h-4 w-4" /> Sunlight
-                </TabsTrigger>
-                <TabsTrigger value="commute" className="gap-2">
-                  <Map className="h-4 w-4" /> Commute
-                </TabsTrigger>
-                <TabsTrigger value="history" className="gap-2">
-                  <Clock className="h-4 w-4" /> History
-                </TabsTrigger>
-                <TabsTrigger value="noise" className="gap-2">
-                  <Volume2 className="h-4 w-4" /> Noise
-                </TabsTrigger>
                 <TabsTrigger value="value" className="gap-2">
-                  <TrendingUp className="h-4 w-4" /> Value
+                  <TrendingUp className="h-4 w-4" /> Value Predictor
                 </TabsTrigger>
-                <TabsTrigger value="photos" className="gap-2">
-                  <Camera className="h-4 w-4" /> Photos
-                </TabsTrigger>
-                <TabsTrigger value="sentiment" className="gap-2">
-                  <MessageCircle className="h-4 w-4" /> Social
-                </TabsTrigger>
-                <TabsTrigger value="design" className="gap-2">
-                  <Home className="h-4 w-4" /> Interior
-                </TabsTrigger>
-
-                {/* Phase 3: Data-Driven */}
-                <TabsTrigger value="dna" className="gap-2">
-                  <Dna className="h-4 w-4" /> DNA
-                </TabsTrigger>
-                <TabsTrigger value="disaster" className="gap-2">
-                  <Shield className="h-4 w-4" /> Risk
-                </TabsTrigger>
-                <TabsTrigger value="schools" className="gap-2">
-                  <GraduationCap className="h-4 w-4" /> Schools
+                <TabsTrigger value="staging" className="gap-2">
+                  <Palette className="h-4 w-4" /> Virtual Staging
                 </TabsTrigger>
                 <TabsTrigger value="costs" className="gap-2">
-                  <DollarSign className="h-4 w-4" /> Costs
+                  <DollarSign className="h-4 w-4" /> Hidden Costs
                 </TabsTrigger>
-
-                {/* Phase 4: Social */}
-                <TabsTrigger value="neighbors" className="gap-2">
-                  <Users className="h-4 w-4" /> Neighbors
-                </TabsTrigger>
-                <TabsTrigger value="family" className="gap-2">
-                  <Vote className="h-4 w-4" /> Family
-                </TabsTrigger>
-                <TabsTrigger value="experts" className="gap-2">
-                  <Hammer className="h-4 w-4" /> Experts
-                </TabsTrigger>
-                <TabsTrigger value="virtual" className="gap-2">
-                  <Video className="h-4 w-4" /> Tours
-                </TabsTrigger>
-
-                {/* Phase 5: Gamification */}
-                <TabsTrigger value="quests" className="gap-2">
-                  <Trophy className="h-4 w-4" /> Quests
-                </TabsTrigger>
-                <TabsTrigger value="simulator" className="gap-2">
-                  <PieChart className="h-4 w-4" /> Simulator
+                <TabsTrigger value="commute" className="gap-2">
+                  <Map className="h-4 w-4" /> Commute Maps
                 </TabsTrigger>
                 <TabsTrigger value="sustainability" className="gap-2">
-                  <Leaf className="h-4 w-4" /> Eco
+                  <Leaf className="h-4 w-4" /> Eco Score
                 </TabsTrigger>
               </TabsList>
             </div>
 
-            {/* Phase 1 & 2 Content */}
-            <TabsContent value="staging" className="mt-6">
-              <VirtualStagingTool propertyId={property.id} />
-            </TabsContent>
-
-            <TabsContent value="sunlight" className="mt-6">
-              <SunlightSimulator propertyId={property.id} />
-            </TabsContent>
-
-            <TabsContent value="commute" className="mt-6">
-              <CommuteMaps propertyLocation={property.location} />
-            </TabsContent>
-
-            <TabsContent value="history" className="mt-6">
-              <StreetViewHistory location={property.location} />
-            </TabsContent>
-
-            <TabsContent value="noise" className="mt-6">
-              <NoisePollutionMap location={property.location} />
-            </TabsContent>
-
             <TabsContent value="value" className="mt-6">
               <PropertyValuePredictor
-                currentPrice={property.price}
-                propertyType={property.propertyType}
-                location={property.location}
+                currentPrice={property?.price || 0}
+                propertyType={property?.propertyType || ""}
+                location={property?.location || ""}
               />
             </TabsContent>
 
-            <TabsContent value="photos" className="mt-6">
-              <SmartPhotoAnalyzer propertyImages={property.images} />
-            </TabsContent>
-
-            <TabsContent value="sentiment" className="mt-6">
-              <NeighborhoodSentiment location={property.location} />
-            </TabsContent>
-
-            <TabsContent value="design" className="mt-6">
-              <AIInteriorDesigner propertyId={property.id} />
-            </TabsContent>
-
-            {/* Phase 3 Content: Data-Driven Insights */}
-            <TabsContent value="dna" className="mt-6">
-              <NeighborhoodDNA location={property.location} />
-            </TabsContent>
-
-            <TabsContent value="disaster" className="mt-6">
-              <DisasterRiskAnalysis location={property.location} />
-            </TabsContent>
-
-            <TabsContent value="schools" className="mt-6">
-              <SchoolPerformanceDashboard location={property.location} />
+            <TabsContent value="staging" className="mt-6">
+              <VirtualStagingTool propertyId={property?.id || ""} />
             </TabsContent>
 
             <TabsContent value="costs" className="mt-6">
               <HiddenCostsCalculator
-                propertyPrice={property.price}
-                propertyType={property.propertyType}
-                area={property.area}
+                propertyPrice={property?.price || 0}
+                propertyType={property?.propertyType || ""}
+                area={property?.area || 0}
               />
             </TabsContent>
 
-            {/* Phase 4 Content: Social & Collaborative */}
-            <TabsContent value="neighbors" className="mt-6">
-              <NeighborConnect location={property.location} />
-            </TabsContent>
-
-            <TabsContent value="family" className="mt-6">
-              <FamilyDecisionBoard propertyId={property.id} />
-            </TabsContent>
-
-            <TabsContent value="experts" className="mt-6">
-              <ExpertMarketplace location={property.location} />
-            </TabsContent>
-
-            <TabsContent value="virtual" className="mt-6">
-              <VirtualOpenHouse propertyId={property.id} />
-            </TabsContent>
-
-            {/* Phase 5 Content: Gamification */}
-            <TabsContent value="quests" className="mt-6">
-              <PropertyQuestSystem />
-            </TabsContent>
-
-            <TabsContent value="simulator" className="mt-6">
-              <InvestmentSimulator propertyPrice={property.price} />
+            <TabsContent value="commute" className="mt-6">
+              <CommuteMaps propertyLocation={property?.location || ""} />
             </TabsContent>
 
             <TabsContent value="sustainability" className="mt-6">
-              <SustainabilityScore propertyId={property.id} />
+              <SustainabilityScore propertyId={property?.id || ""} />
             </TabsContent>
           </Tabs>
         </div>
@@ -480,24 +336,28 @@ const PropertyDetail = () => {
           </h2>
           <ShareButtons
             url={typeof window !== "undefined" ? window.location.href : ""}
-            title={property.title}
-            description={property.description}
+            title={property?.title || ""}
+            description={property?.description || ""}
           />
         </div>
 
         {/* Investment Analysis Grid */}
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <InvestmentInsights property={property} />
-          <PriceHistoryChart propertyId={property.id} />
+          {property ? (
+            <InvestmentInsights property={property} />
+          ) : (
+            <div className="h-40 rounded-xl bg-secondary animate-pulse" />
+          )}
+          <PriceHistoryChart propertyId={property?.id || ""} />
         </div>
 
         {/* ROI Calculator & Neighborhood */}
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <ROICalculator
-            propertyPrice={property.price}
-            expectedRent={property.price * 0.003}
+            propertyPrice={property?.price || 0}
+            expectedRent={(property?.price || 0) * 0.003}
           />
-          <NeighborhoodInsights location={property.location} />
+          <NeighborhoodInsights location={property?.location || ""} />
         </div>
 
         {/* Reviews Section */}
@@ -507,11 +367,14 @@ const PropertyDetail = () => {
               Reviews & Ratings
             </h2>
             <div className="mt-6">
-              <ReviewList propertyId={property.id} />
+              <ReviewList propertyId={property?.id || ""} />
             </div>
           </div>
           <div>
-            <ReviewForm propertyId={property.id} onSubmitted={() => { }} />
+            <ReviewForm
+              propertyId={property?.id || ""}
+              onSubmitted={() => {}}
+            />
           </div>
         </div>
 
@@ -519,7 +382,7 @@ const PropertyDetail = () => {
         {similar.length > 0 && (
           <section className="mt-16">
             <h2 className="font-display text-2xl font-bold text-foreground">
-              Similar Properties in {property.location}
+              Similar Properties in {property?.location || "..."}
             </h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {similar.map((p) => (

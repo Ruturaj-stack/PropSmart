@@ -32,12 +32,12 @@ export const fetchProperties = async (): Promise<Property[]> => {
     }
 };
 
-export const fetchPropertyById = async (id: string): Promise<Property | null> => {
+export const fetchPropertyBySlug = async (slug: string): Promise<Property | null> => {
     try {
         const properties = await fetchProperties();
-        return properties.find(p => p.id === id) || null;
+        return properties.find(p => p.slug === slug) || null;
     } catch (error) {
-        console.error("Error fetching property details:", error);
+        console.error("Error fetching property details by slug:", error);
         return null;
     }
 };

@@ -13,13 +13,8 @@ interface RecentlyViewedProps {
 const RecentlyViewed = ({ limit = 6 }: RecentlyViewedProps) => {
   const { recentlyViewed, loading, error } = useRecentlyViewed(limit);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-12">
-        <Loader2 className="h-8 w-8 animate-spin text-accent" />
-      </div>
-    );
-  }
+  // Render immediately for instant feel
+  /* Loading handled inline if needed */
 
   if (error) {
     return (

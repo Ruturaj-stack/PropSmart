@@ -13,28 +13,24 @@ export const scoreProperty = (
   let score = 0;
   const reasons: string[] = [];
 
-  // Budget match → +30 points
-  if (property.listingType === "Rent") {
-    if (property.price >= preferences.minBudget && property.price <= preferences.maxBudget) {
-      score += 30;
-      reasons.push("Within your budget range");
-    } else if (
-      property.price >= preferences.minBudget * 0.8 &&
-      property.price <= preferences.maxBudget * 1.2
-    ) {
-      score += 15;
-      reasons.push("Close to your budget range");
-    }
+  // Budget match → +35 points max (Increased weight for accuracy)
+  const isWithinBudget = property.price >= preferences.minBudget && property.price <= preferences.maxBudget;
+  
+  if (isWithinBudget) {
+    score += 35;
+    reasons.push("Perfect match for your budget");
   } else {
-    if (property.price >= preferences.minBudget && property.price <= preferences.maxBudget) {
-      score += 30;
-      reasons.push("Within your budget range");
-    } else if (
-      property.price >= preferences.minBudget * 0.8 &&
-      property.price <= preferences.maxBudget * 1.2
-    ) {
-      score += 15;
-      reasons.push("Close to your budget range");
+    // Calculate how far out it is (%)
+    const lowerDiff = (preferences.minBudget - property.price) / preferences.minBudget;
+    const upperDiff = (property.price - preferences.maxBudget) / preferences.maxBudget;
+    const maxDiff = Math.max(lowerDiff, upperDiff);
+
+    if (maxDiff <= 0.1) { // Within 10%
+      score += 20;
+      reasons.push("Very close to your budget");
+    } else if (maxDiff <= 0.25) { // Within 25%
+      score += 10;
+      reasons.push("Slightly outside budget range");
     }
   }
 

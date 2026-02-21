@@ -6,13 +6,9 @@ import {
   Brain,
   TrendingUp,
   Palette,
-  Sun,
   Map,
-  Clock,
-  Volume2,
-  Camera,
-  MessageCircle,
-  Home as HomeIcon,
+  DollarSign,
+  Leaf,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -24,6 +20,29 @@ import { Button } from "@/components/ui/button";
 const InnovationHub = () => {
   const featureCategories = [
     {
+      title: "Intelligent Insights",
+      icon: Brain,
+      color: "text-blue-600",
+      features: [
+        {
+          name: "Property Value Predictor",
+          description:
+            "ML forecasts for future price trends and investment timing",
+          icon: TrendingUp,
+        },
+        {
+          name: "Hidden Costs Calculator",
+          description: "Complete transparency on taxes, fees, and maintenance",
+          icon: DollarSign,
+        },
+        {
+          name: "Sustainability Score",
+          description: "Energy efficiency and eco-friendliness ratings",
+          icon: Leaf,
+        },
+      ],
+    },
+    {
       title: "Visual & Immersive",
       icon: Sparkles,
       color: "text-purple-600",
@@ -34,51 +53,9 @@ const InnovationHub = () => {
           icon: Palette,
         },
         {
-          name: "Sunlight Simulator",
-          description: "See natural light patterns throughout the day",
-          icon: Sun,
-        },
-        {
           name: "Commute Time Maps",
-          description: "Interactive isochrone maps for travel planning",
+          description: "Interactive travel planning with isochrone maps",
           icon: Map,
-        },
-        {
-          name: "Neighborhood History",
-          description: "Watch areas evolve over the years",
-          icon: Clock,
-        },
-        {
-          name: "Noise Pollution Map",
-          description: "Real-time sound level monitoring",
-          icon: Volume2,
-        },
-      ],
-    },
-    {
-      title: "AI-Powered Intelligence",
-      icon: Brain,
-      color: "text-blue-600",
-      features: [
-        {
-          name: "Property Value Predictor",
-          description: "ML forecasts for future price trends",
-          icon: TrendingUp,
-        },
-        {
-          name: "Smart Photo Analyzer",
-          description: "AI detects quality and authenticity",
-          icon: Camera,
-        },
-        {
-          name: "Sentiment Analysis",
-          description: "Community opinions from social media",
-          icon: MessageCircle,
-        },
-        {
-          name: "Interior Designer AI",
-          description: "Personalized design and furniture suggestions",
-          icon: HomeIcon,
         },
       ],
     },
@@ -102,7 +79,7 @@ const InnovationHub = () => {
             Innovation Hub
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover cutting-edge AI-powered tools and immersive experiences
+            Discover our 5 premium AI-powered tools and immersive experiences
             that make PropSmart the most advanced property finder
           </p>
 
@@ -174,7 +151,7 @@ const InnovationHub = () => {
         <div className="container">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "20", label: "AI Features", icon: Brain },
+              { value: "5", label: "Premium AI Features", icon: Brain },
               { value: "98%", label: "Accuracy Rate", icon: TrendingUp },
               { value: "< 2s", label: "Processing Time", icon: Zap },
               { value: "24/7", label: "Availability", icon: Sparkles },

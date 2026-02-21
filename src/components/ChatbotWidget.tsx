@@ -77,22 +77,20 @@ const ChatbotWidget = () => {
     setMessages(newMessages);
     localStorage.setItem("chatbot_messages", JSON.stringify(newMessages));
 
-    // Generate AI response
-    setTimeout(() => {
-      const response = generateChatbotResponse(userMessage);
+    // Generate AI response instantly for better feel
+    const response = generateChatbotResponse(userMessage);
 
-      const aiMsg: Message = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: response.message,
-        timestamp: new Date(),
-      };
+    const aiMsg: Message = {
+      id: (Date.now() + 1).toString(),
+      role: "assistant",
+      content: response.message,
+      timestamp: new Date(),
+    };
 
-      const updatedMessages = [...newMessages, aiMsg];
-      setMessages(updatedMessages);
-      localStorage.setItem("chatbot_messages", JSON.stringify(updatedMessages));
-      setLoading(false);
-    }, 500); // Small delay for natural feel
+    const updatedMessages = [...newMessages, aiMsg];
+    setMessages(updatedMessages);
+    localStorage.setItem("chatbot_messages", JSON.stringify(updatedMessages));
+    setLoading(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -208,29 +206,7 @@ const ChatbotWidget = () => {
               </div>
             ))}
 
-            {loading && (
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-accent/10">
-                  <Bot className="h-4 w-4 text-accent" />
-                </div>
-                <div className="bg-secondary rounded-2xl px-4 py-2">
-                  <div className="flex gap-1">
-                    <div
-                      className="h-2 w-2 rounded-full bg-muted-foreground animate-bounce"
-                      style={{ animationDelay: "0ms" }}
-                    />
-                    <div
-                      className="h-2 w-2 rounded-full bg-muted-foreground animate-bounce"
-                      style={{ animationDelay: "150ms" }}
-                    />
-                    <div
-                      className="h-2 w-2 rounded-full bg-muted-foreground animate-bounce"
-                      style={{ animationDelay: "300ms" }}
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
+            {/* Loading dots removed for instant feel */}
 
             <div ref={messagesEndRef} />
           </div>

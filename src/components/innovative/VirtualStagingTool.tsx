@@ -94,17 +94,10 @@ const VirtualStagingTool = ({ propertyId }: VirtualStagingToolProps) => {
           disabled={isGenerating}
           className="gap-2"
         >
-          {isGenerating ? (
-            <>
-              <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-              Generating...
-            </>
-          ) : (
-            <>
-              <Sparkles className="h-4 w-4" />
-              Apply Staging
-            </>
-          )}
+          <>
+            <Sparkles className="h-4 w-4" />
+            Apply Staging
+          </>
         </Button>
       </div>
 

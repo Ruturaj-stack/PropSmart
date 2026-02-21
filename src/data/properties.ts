@@ -13,6 +13,7 @@ export interface Property {
   status: "Available" | "Sold" | "Rented" | "Under Construction";
   images: string[];
   createdAt: string;
+  slug: string;
 }
 
 export interface UserPreferences {
@@ -67,6 +68,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[0], propertyImages[1]],
     createdAt: "2025-12-01",
+    slug: "luxurious-sea-view-apartment-mumbai",
   },
   {
     id: "2",
@@ -83,6 +85,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[2], propertyImages[3]],
     createdAt: "2025-11-15",
+    slug: "modern-villa-whitefield-bangalore",
   },
   {
     id: "3",
@@ -99,6 +102,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[5], propertyImages[6]],
     createdAt: "2026-01-05",
+    slug: "cozy-studio-koramangala-bangalore",
   },
   {
     id: "4",
@@ -115,6 +119,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[6], propertyImages[7]],
     createdAt: "2026-01-20",
+    slug: "premium-pg-hinjewadi-pune",
   },
   {
     id: "5",
@@ -131,6 +136,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[4], propertyImages[0]],
     createdAt: "2025-10-30",
+    slug: "elegant-3bhk-jubilee-hills-hyderabad",
   },
   {
     id: "6",
@@ -147,6 +153,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[3], propertyImages[2]],
     createdAt: "2026-02-01",
+    slug: "beach-house-goa",
   },
   {
     id: "7",
@@ -163,6 +170,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[7], propertyImages[4]],
     createdAt: "2026-01-10",
+    slug: "spacious-family-home-delhi",
   },
   {
     id: "8",
@@ -179,6 +187,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[1], propertyImages[5]],
     createdAt: "2025-12-20",
+    slug: "smart-2bhk-baner-pune",
   },
   {
     id: "9",
@@ -195,6 +204,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[2], propertyImages[7]],
     createdAt: "2025-11-25",
+    slug: "heritage-villa-jaipur",
   },
   {
     id: "10",
@@ -211,6 +221,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[0], propertyImages[6]],
     createdAt: "2026-02-05",
+    slug: "furnished-flat-anna-nagar-chennai",
   },
   {
     id: "11",
@@ -227,6 +238,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[4], propertyImages[1]],
     createdAt: "2025-09-15",
+    slug: "penthouse-suite-worli-mumbai",
   },
   {
     id: "12",
@@ -243,6 +255,7 @@ export const mockProperties: Property[] = [
     status: "Available",
     images: [propertyImages[5], propertyImages[3]],
     createdAt: "2026-02-10",
+    slug: "affordable-pg-manyata-tech-park-bangalore",
   },
 ];
 

@@ -75,13 +75,8 @@ const ReviewList = ({ propertyId }: ReviewListProps) => {
     );
   };
 
-  if (loading) {
-    return (
-      <div className="p-8 text-center text-muted-foreground">
-        Loading reviews...
-      </div>
-    );
-  }
+  // Render immediately for instant feel
+  /* Loading handled inline if needed */
 
   return (
     <div className="space-y-6">

@@ -3,27 +3,10 @@ import { SlidersHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export interface Filters {
-  location: string;
-  propertyType: string;
-  listingType: string;
-  minBudget: number;
-  maxBudget: number;
-  bedrooms: number | null;
-  amenities: string[];
-  sortBy: string;
-}
+import { Filters, defaultFilters } from "@/types/filters";
 
-export const defaultFilters: Filters = {
-  location: "",
-  propertyType: "",
-  listingType: "",
-  minBudget: 0,
-  maxBudget: 100000000,
-  bedrooms: null,
-  amenities: [],
-  sortBy: "recommended",
-};
+export type { Filters };
+export { defaultFilters };
 
 interface SearchFiltersProps {
   filters: Filters;
@@ -32,7 +15,12 @@ interface SearchFiltersProps {
   resultCount: number;
 }
 
-const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFiltersProps) => {
+const SearchFilters = ({
+  filters,
+  onChange,
+  onReset,
+  resultCount,
+}: SearchFiltersProps) => {
   const activeCount = [
     filters.location,
     filters.propertyType,
@@ -42,20 +30,29 @@ const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFilter
   ].filter(Boolean).length;
 
   const selectClass =
-    "w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/30";
+    "w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/30 dark:bg-slate-900 dark:text-slate-100 transition-colors";
 
   return (
     <div className="rounded-xl border border-border bg-card p-5 shadow-card">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <SlidersHorizontal className="h-5 w-5 text-accent" />
-          <h3 className="font-display text-lg font-semibold text-card-foreground">Filters</h3>
+          <h3 className="font-display text-lg font-semibold text-card-foreground">
+            Filters
+          </h3>
           {activeCount > 0 && (
-            <Badge variant="secondary" className="text-xs">{activeCount} active</Badge>
+            <Badge variant="secondary" className="text-xs">
+              {activeCount} active
+            </Badge>
           )}
         </div>
         {activeCount > 0 && (
-          <Button variant="ghost" size="sm" onClick={onReset} className="gap-1 text-xs text-muted-foreground">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onReset}
+            className="gap-1 text-xs text-muted-foreground"
+          >
             <X className="h-3 w-3" /> Clear
           </Button>
         )}
@@ -63,7 +60,9 @@ const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFilter
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Location</label>
+          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            Location
+          </label>
           <select
             className={selectClass}
             value={filters.location}
@@ -71,17 +70,23 @@ const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFilter
           >
             <option value="">All Locations</option>
             {LOCATIONS.map((loc) => (
-              <option key={loc} value={loc}>{loc}</option>
+              <option key={loc} value={loc}>
+                {loc}
+              </option>
             ))}
           </select>
         </div>
 
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Listing Type</label>
+          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            Listing Type
+          </label>
           <select
             className={selectClass}
             value={filters.listingType}
-            onChange={(e) => onChange({ ...filters, listingType: e.target.value })}
+            onChange={(e) =>
+              onChange({ ...filters, listingType: e.target.value })
+            }
           >
             <option value="">Buy & Rent</option>
             <option value="Buy">Buy</option>
@@ -90,21 +95,29 @@ const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFilter
         </div>
 
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Property Type</label>
+          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            Property Type
+          </label>
           <select
             className={selectClass}
             value={filters.propertyType}
-            onChange={(e) => onChange({ ...filters, propertyType: e.target.value })}
+            onChange={(e) =>
+              onChange({ ...filters, propertyType: e.target.value })
+            }
           >
             <option value="">All Types</option>
             {PROPERTY_TYPES.map((t) => (
-              <option key={t} value={t}>{t}</option>
+              <option key={t} value={t}>
+                {t}
+              </option>
             ))}
           </select>
         </div>
 
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Bedrooms</label>
+          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            Bedrooms
+          </label>
           <div className="flex gap-1.5">
             {[null, 1, 2, 3, 4].map((num) => (
               <button
@@ -123,7 +136,9 @@ const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFilter
         </div>
 
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Sort By</label>
+          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            Sort By
+          </label>
           <select
             className={selectClass}
             value={filters.sortBy}
@@ -137,7 +152,9 @@ const SearchFilters = ({ filters, onChange, onReset, resultCount }: SearchFilter
         </div>
 
         <div className="sm:col-span-2 lg:col-span-1">
-          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Amenities</label>
+          <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+            Amenities
+          </label>
           <div className="flex flex-wrap gap-1.5">
             {AMENITIES.slice(0, 8).map((amenity) => (
               <button

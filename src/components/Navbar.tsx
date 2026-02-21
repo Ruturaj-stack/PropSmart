@@ -48,12 +48,14 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-2 font-display text-xl font-bold text-foreground"
+          className="flex items-center gap-2 font-display text-2xl font-extrabold tracking-tight text-foreground transition-opacity hover:opacity-90"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent">
-            <Home className="h-5 w-5 text-accent-foreground" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-orange-600 shadow-lg shadow-accent/20">
+            <Home className="h-6 w-6 text-white" />
           </div>
-          PropSmart
+          <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            PropSmart
+          </span>
         </Link>
 
         {/* Desktop */}
@@ -62,10 +64,11 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${isActive(link.to)
+              className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                isActive(link.to)
                   ? "bg-accent/10 text-accent"
                   : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                }`}
+              }`}
             >
               <link.icon className="h-4 w-4" />
               {link.label}
@@ -148,10 +151,11 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${isActive(link.to)
+              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${
+                isActive(link.to)
                   ? "bg-accent/10 text-accent"
                   : "text-muted-foreground"
-                }`}
+              }`}
             >
               <link.icon className="h-4 w-4" />
               {link.label}
