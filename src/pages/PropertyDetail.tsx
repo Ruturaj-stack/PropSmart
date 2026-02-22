@@ -130,9 +130,8 @@ const PropertyDetail = () => {
               <button
                 key={i}
                 onClick={() => setActiveImg(i)}
-                className={`overflow-hidden rounded-lg border-2 transition-colors ${
-                  i === activeImg ? "border-accent" : "border-transparent"
-                }`}
+                className={`overflow-hidden rounded-lg border-2 transition-colors ${i === activeImg ? "border-accent" : "border-transparent"
+                  }`}
               >
                 <img
                   src={img}
@@ -149,11 +148,10 @@ const PropertyDetail = () => {
           <div>
             <div className="flex flex-wrap gap-2">
               <span
-                className={`rounded-md px-3 py-1 text-sm font-semibold ${
-                  property?.listingType === "Rent"
+                className={`rounded-md px-3 py-1 text-sm font-semibold ${property?.listingType === "Rent"
                     ? "bg-badge-rent text-badge-rent-foreground"
                     : "bg-badge-buy text-badge-buy-foreground"
-                }`}
+                  }`}
               >
                 For {property?.listingType || "..."}
               </span>
@@ -316,6 +314,8 @@ const PropertyDetail = () => {
                 propertyPrice={property?.price || 0}
                 propertyType={property?.propertyType || ""}
                 area={property?.area || 0}
+                state={property?.location || ""}
+                propertyStatus={property?.status || ""}
               />
             </TabsContent>
 
@@ -373,7 +373,7 @@ const PropertyDetail = () => {
           <div>
             <ReviewForm
               propertyId={property?.id || ""}
-              onSubmitted={() => {}}
+              onSubmitted={() => { }}
             />
           </div>
         </div>
